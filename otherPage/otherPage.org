@@ -1,3 +1,3 @@
 #+TITLE: Other Page
 
-[[../index.html][Home]]
+[[https://jhwang04.github.io/index.html][Home]]

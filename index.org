@@ -1,8 +1,0 @@
-#+TITLE: Justin Hwang's Portfolio
-#+AUTHOR: Justin Hwang
-
-About me: // TODO
-
-[[https://jhwang04.github.io/otherPage/otherPage.html][Other Page]]
-
-

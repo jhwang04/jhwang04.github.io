@@ -1,3 +1,0 @@
-#+TITLE: Other Page
-
-[[https://jhwang04.github.io/index.html][Home]]

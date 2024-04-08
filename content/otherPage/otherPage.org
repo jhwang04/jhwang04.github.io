@@ -1,0 +1,4 @@
+#+TITLE: Other Page
+#+SETUPFILE: https://fniessen.github.io//org-html-themes/org/theme-readtheorg.setup
+
+[[../index.html][Home]]

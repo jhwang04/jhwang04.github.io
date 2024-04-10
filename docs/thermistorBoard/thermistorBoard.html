@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thermistor Board Project (Hytech Racing)</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Thermistor Board Project (Hytech Racing)</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org60159ac">&lt; Back Home</a></li>
+<li><a href="#org5231114">Overview</a></li>
+<li><a href="#orgbd1ebca">Requirements</a></li>
+<li><a href="#orgdc66777">Design</a></li>
+<li><a href="#org3a9f2f7">Building &amp; Coding</a></li>
+<li><a href="#org143614d">Reflection</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org60159ac" class="outline-2">
+<h2 id="org60159ac"><a href="../index.html">&lt; Back Home</a></h2>
+</div>
+
+<div id="outline-container-org5231114" class="outline-2">
+<h2 id="org5231114">Overview</h2>
+<div class="outline-text-2" id="text-org5231114">
+<p>
+For Hytech, we needed an array of thermistors to measure temperature data at many different
+points. Initially, this was designed to measure data in an array between two large aluminum
+plates to to verify their thermal properties. We could not simply use a thermal camera, since
+this we needed to measure data between solid plates.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbd1ebca" class="outline-2">
+<h2 id="orgbd1ebca">Requirements</h2>
+<div class="outline-text-2" id="text-orgbd1ebca">
+<p>
+In order for our solution to be viable, we needed to meet the following criteria.
+</p>
+<ol class="org-ol">
+<li>Record temperature data at &gt;60 locations. (<i>One thermistor every 2 square inches
+on a 9" x 13" plate</i>)</li>
+<li>Record temperature data for at least 30 minutes.</li>
+<li>Save data to a CSV file for later analysis.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgdc66777" class="outline-2">
+<h2 id="orgdc66777">Design</h2>
+<div class="outline-text-2" id="text-orgdc66777">
+<p>
+We decided to use an Arduino Teensy 4.1 with analog multiplexers to record the data. Since
+the Arduino does not have sufficient analog pins for our 60+ thermistors, we instead
+connect the Teensy to several 8x1 MUXs. We designed our board to record data from 96
+thermistors and record it in a Micro-SD card on the Teensy.
+</p>
+
+<p>
+We used Autodesk EAGLE to design the a PCB. We had six MUXes (each with two 8x1 sides)
+connected to the Teensy.
+</p>
+
+
+<div id="orgcd3e9e7" class="figure">
+<p><img src="../assets/thermistor_board/ThermistorBoardEAGLEDiagram.jpg" alt="ThermistorBoardEAGLEDiagram.jpg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>EAGLE Board Diagram. PDF can be found <a href="../assets/thermistor_board/ThermistorBoardEAGLEDiagram.pdf">here</a></p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3a9f2f7" class="outline-2">
+<h2 id="org3a9f2f7">Building &amp; Coding</h2>
+<div class="outline-text-2" id="text-org3a9f2f7">
+<p>
+After ordering the board, we had to solder each of the thermistor wires to blue/orange wires,
+Molex crimp the other ends of the wires, and then connect them to 16-pin Molex connectors.
+We needed to use Kapton tape to insulate the leads on each thermistor.
+</p>
+
+
+<div id="orgd56490b" class="figure">
+<p><img src="../assets/thermistor_board/thermistor_wires_image.jpeg" alt="thermistor_wires_image.jpeg" width="500px" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Soldered, crimped, insulated, labaled bundle of 8 thermistors</p>
+</div>
+
+
+<div id="org51602a4" class="figure">
+<p><img src="../assets/thermistor_board/Thermistor_Board_multiplexer_layout.png" alt="Thermistor_Board_multiplexer_layout.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Thermistor naming diagram to organize data</p>
+</div>
+
+<p>
+After connecting each bundle to the board, we wrote Arduino code to select each pin,
+print the data on the Serial monitor.
+</p>
+
+
+<div id="org6a7fd92" class="figure">
+<p><img src="../assets/thermistor_board/thermistor_code_screenshot.png" alt="thermistor_code_screenshot.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Excert of main <i>loop()</i> function. Full code can be found <a href="https://github.com/hytech-racing/code-2024/blob/thermistor-board/Utilities/thermistor_board/thermistor_board/thermistor_board.ino">here</a></p>
+</div>
+
+<p>
+Initially, we wrote a python script to read the data from the Serial monitor and save it
+to a CSV on the computer while it is plugged in. However, since the test needed to run for an
+extended period of time, we decided that it would be better if the Teensy could save the
+data without a computer being plugged in, so we saved the data locally to a micro SD card.
+</p>
+
+<p>
+Since it was saved as a CSV, we could analyze the data in a spreadsheet.
+</p>
+
+<div id="org0982deb" class="figure">
+<p><img src="../assets/thermistor_board/Thermistor_Data.png" alt="Thermistor_Data.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>Thermistor data logged in a spreadsheet with slight conditional formatting.</p>
+</div>
+
+<p>
+Unfortunately, the project was not completed before the manufacturing team needed to fabricate
+the aluminum plate, so we were not able to use the board for its original purpose. However,
+it is currently being used to test battery segments, and is reportedly working flawlessly.
+</p>
+
+
+<div id="org67c8b81" class="figure">
+<p><img src="../assets/thermistor_board/finishedBoard.jpg" alt="finishedBoard.jpg" />
+</p>
+<p><span class="figure-number">Figure 6: </span>Completed thermistor board</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org143614d" class="outline-2">
+<h2 id="org143614d">Reflection</h2>
+<div class="outline-text-2" id="text-org143614d">
+<p>
+Overall, this was a really helful project. By working on this board, I learned several
+electrical engineering fundamentals, including:
+</p>
+<ol class="org-ol">
+<li>Converting an analog signal into a temperature (in degrees) using thermistor datasheet</li>
+<li>PCB design in EAGLE</li>
+<li>Through-hole soldering</li>
+<li>Molex crimps</li>
+<li>Reading from Arduino Serial monitor with a Python script</li>
+<li>Writing to a Micro-SD on the Teensy</li>
+</ol>
+
+<p>
+However, there are several things I would change if I did this project again.
+</p>
+<ol class="org-ol">
+<li><b>Plan out wire lengths and routing ahead of time.</b> Since we have 80+ resistors with 2 wires
+each, they get tangled extremely easily, and the final product looks messy. Some of our
+thermistors became so entangled that it took us several hours to reorganize them all.
+This was an extremely tedious process, and used a significant amount of expensive Kapton
+tape to insulate the ends of the wires.</li>
+<li><b>Calibrate each thermistor individually.</b> In our final data, each thermistor gave data
+that varied by up to 2-3 degrees celsius. For our application, that was sufficiently
+accurate, but that is still a fairly large tolerance for error. When discussing this with
+the Electrical lead, he recommended adding an offset to each thermistor to minimize variance.</li>
+<li><b>Hard-code more constants.</b> I began working on code before we had finalized the total
+number of thermistors and the size of each multiplexer. As a result, I wrote more "general"
+code that could adjust if fewer pins were connected. This was functional, but makes
+the codebase slightly more difficult to modify and maintain.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.1 (<a href="https://orgmode.org">Org</a> mode 9.5.2)</p>
+</div>
+</body>
+</html>

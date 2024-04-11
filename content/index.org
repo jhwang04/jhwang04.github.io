@@ -65,3 +65,58 @@ plates to to verify their thermal properties. /[[./thermistorBoard/thermistorBoa
 #+attr_html: :width 400px :align center
 [[../assets/thermistor_board/Thermistor_Board_multiplexer_layout.png]]
 
+\\
+\\
+
+** JUnit-style test cases
+In my Object-Oriented Programming (CS 1331) and Data Structures/Algorithsm (CS 1332) classes,
+students are encouraged to share tester files for the homework assignments on the class forum.
+My friend and I began working together to write the most elegant, thorough, and compartmentalized
+tester files to monopolize the market. /(read more)/
+
+\\
+\\
+
+** LaTeX note-taking system using Emacs
+During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
+me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is
+highly configurable, and I have really enjoyed using various features to take notes quickly
+and elegantly during class. /(read more)/
+
+\\
+\\
+
+* Relevant Coursework
+** Digital Systems & Design
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2020):
+#+begin_quote
+
+Computer system and digital design principles. Switch and gate design, Boolean algebra, [...]
+storage elements. Datapath, memory organization, instruction set architecture, assembly
+language.
+#+end_quote
+
+** Data Structures & Algorithms
+From the [[https://catalog.gatech.edu/courses-undergrad/cs][course catalog]] (CS 1332):
+#+begin_quote
+
+Computer data structures and algorithms in the context of object-oriented programming.
+Focus on software development towards applications.
+#+end_quote
+
+** Discrete Math for CS
+From the [[https://catalog.gatech.edu/courses-undergrad/cs][course catalog]] (CS 2050):
+#+begin_quote
+
+Proof methods, strategy, correctness of algorithms over discrete structures. Induction and
+recursion. Complexity and order of growth. Number theoretic principles and algorithms.
+Counting and computability.
+#+end_quote
+
+** Intro Physics II
+From the [[https://catalog.gatech.edu/courses-undergrad/phys][course catalog]] (PHYS 2212):
+#+begin_quote
+
+A calculus-based course with laboratory covering electromagnetism, applications of
+electromagnetism, light, and modern physics.
+#+end_quote

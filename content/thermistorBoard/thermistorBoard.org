@@ -3,12 +3,16 @@
 
 * [[../index.html][< Back Home]]
 
+\\
+\\
 * Overview
 For Hytech, we needed an array of thermistors to measure temperature data at many different
 points. Initially, this was designed to measure data in an array between two large aluminum
 plates to to verify their thermal properties. We could not simply use a thermal camera, since
 this we needed to measure data between solid plates.
 
+\\
+\\
 * Requirements
 In order for our solution to be viable, we needed to meet the following criteria.
 1) Record temperature data at >60 locations. (/One thermistor every 2 square inches
@@ -16,6 +20,8 @@ In order for our solution to be viable, we needed to meet the following criteria
 2) Record temperature data for at least 30 minutes.
 3) Save data to a CSV file for later analysis.
 
+\\
+\\
 * Design
 We decided to use an Arduino Teensy 4.1 with analog multiplexers to record the data. Since
 the Arduino does not have sufficient analog pins for our 60+ thermistors, we instead
@@ -29,13 +35,15 @@ connected to the Teensy.
 #+caption: EAGLE Board Diagram. PDF can be found [[../assets/thermistor_board/ThermistorBoardEAGLEDiagram.pdf][here]]
 [[../assets/thermistor_board/ThermistorBoardEAGLEDiagram.jpg]]
 
+\\
+\\
 * Building & Coding
 
 After ordering the board, we had to solder each of the thermistor wires to blue/orange wires,
 Molex crimp the other ends of the wires, and then connect them to 16-pin Molex connectors.
 We needed to use Kapton tape to insulate the leads on each thermistor.
 
-#+caption: Soldered, crimped, insulated, labaled bundle of 8 thermistors
+#+caption: Soldered, crimped, insulated, labeled bundle of 8 thermistors
 #+attr_html: :width 500px
 [[../assets/thermistor_board/thermistor_wires_image.jpeg]]
 
@@ -65,6 +73,8 @@ it is currently being used to test battery segments, and is reportedly working f
 #+caption: Completed thermistor board
 [[../assets/thermistor_board/finishedBoard.jpg]]
 
+\\
+\\
 * Reflection
 
 Overall, this was a really helful project. By working on this board, I learned several

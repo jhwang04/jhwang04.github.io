@@ -7,8 +7,11 @@
 
 B.S. in Computer Engineering (Spring 2027) \\
 Concentrations in Computing Hardware and Robotics \\
-Minor in Korean Language (Fall 2024) \\
+Minor in Korean Language (Fall 2024)
 
+\\
+\\
+\\
 * About Me
 I am a first-year Computer Engineering major with concentrations in Computing Hardware and Robotics. I chose this
 field of study because I wanted to learn how computers work on a fundamental level, and to develop programming
@@ -26,15 +29,33 @@ environments. I actively seek situations where I am the least experienced. I bel
 my detail-orientedness, discipline, and curiosity will allow me to make meaningful
 contributions to any engineering team.
 
+
+\\
+\\
+\\
 * Resume
 
 #+begin_export html
 <embed src="./assets/resume/Hwang_Justin_Resume.pdf" width="600" height="780" type="application/pdf">
 #+end_export
 
+\\
+\\
+\\
 * Career Goals
+Five years from now, I hope to graduate with a Master's degree in Electrical and Computer
+Engineering and work full-time.
 
+I plan to stay involved in Hytech Racing over the next few years to gain practical engineering experience. I have
+found that I really enjoy the fast-paced environment and I'm excited to see what else I
+will learn.
 
+I also hope to get an internship or co-op starting *Spring/Summer 2025*. An internship
+would also develop practical skills, but in a more profesional environment.
+
+\\
+\\
+\\
 * Technical Projects
 ** Thermistor Board Project (Hytech Racing)
 For Hytech, we needed an array of thermistors to measure temperature data at many different

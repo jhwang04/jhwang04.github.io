@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs note-taking system</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Emacs note-taking system</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf2d3683">&lt; Back Home</a></li>
+<li><a href="#orgba70931">Overview</a></li>
+<li><a href="#org77cc333">Why?</a></li>
+<li><a href="#org6b95dd7">Note-taking process</a></li>
+<li><a href="#org5778dd2">Reflection</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf2d3683" class="outline-2">
+<h2 id="orgf2d3683"><a href="../index.html">&lt; Back Home</a></h2>
+<div class="outline-text-2" id="text-orgf2d3683">
+<p>
+<br />
+<br />
+</p>
+
+<p>
+<br />
+<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgba70931" class="outline-2">
+<h2 id="orgba70931">Overview</h2>
+<div class="outline-text-2" id="text-orgba70931">
+<p>
+During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
+me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is
+highly configurable, and I have really enjoyed using various features to take notes quickly
+and elegantly during class. The following notes were taken <b>in real-time</b> and were not
+reformatted/modified after the lecture.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../assets/noteTaking/notesPage28.png" alt="notesPage28.png" /></td>
+<td class="org-left"><img src="../assets/noteTaking/discretePage33.png" alt="discretePage33.png" /></td>
+</tr>
+
+<tr>
+<td class="org-left"><img src="../assets/noteTaking/discretePage56.png" alt="discretePage56.png" /></td>
+<td class="org-left"><img src="../assets/noteTaking/notesPage48.png" alt="notesPage48.png" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<br />
+<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org77cc333" class="outline-2">
+<h2 id="org77cc333">Why?</h2>
+<div class="outline-text-2" id="text-org77cc333">
+<p>
+For my Discrete Math class, we often use mathematical and logical symbols
+such as AND (\(\land\)), OR (\(\lor\)), FOR ALL (\(\forall\)), etc. These symbols
+make typed notes particularly difficult. However, we often need to write out
+full sentences to provide conclusions for our proofs, which poses a challenge
+for handwritten notes.
+</p>
+
+<p>
+One possible solution is to take notes in LaTeX, which would help with both
+formatting and speed. However, I often found it difficult to type the
+<code>\begin{center}</code>, <code>\begin{tabular}</code>, and other LaTeX tags.
+</p>
+
+<p>
+The solution I preferred was to use Emacs Org, which allows me to take
+readable notes in a markdown-like environment, but insert LaTeX snippets
+and colored boxes without much trouble.
+</p>
+
+<p>
+<br />
+<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6b95dd7" class="outline-2">
+<h2 id="org6b95dd7">Note-taking process</h2>
+<div class="outline-text-2" id="text-org6b95dd7">
+
+<div id="org27fbcc1" class="figure">
+<p><img src="../assets/noteTaking/raw_notes.png" alt="raw_notes.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Unrendered notes in Emacs</p>
+</div>
+
+<p>
+Here is an example of some un-rendered notes. Most of the time, during class, this
+is what my screen looks like. I configured several Emacs snippets using the <code>YASnippet</code>
+plugin to insert the <code>\begin{verbatim}</code> and <code>\end{verbatim}</code> lines at the end, which
+formats the output in a gray, monospace box.
+</p>
+
+
+<div id="org7164baa" class="figure">
+<p><img src="../assets/noteTaking/rendered_notes.png" alt="rendered_notes.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Rendered notes</p>
+</div>
+
+<p>
+<br />
+<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5778dd2" class="outline-2">
+<h2 id="org5778dd2">Reflection</h2>
+<div class="outline-text-2" id="text-org5778dd2">
+<p>
+Overall, this "project" has been really interesting. I did not start the semester
+planning on learning a new system for note-taking, but this was a solution I stumbled
+upon. For the most part, this project has drastically improved my proficiency
+in Emacs as a super-customizeable text editor, and with Org-Mode specifically. <i>(If you couldn't tell, this portfolio website is written in Emacs, using Org's export mode to convert it to HTML!)</i>
+</p>
+
+<p>
+However, there are several things I would do differently if I were to re-learn these skills from the ground up.
+</p>
+<ol class="org-ol">
+<li><b>Configure YASnippets first.</b> If I had learned how to use this plugin earlier in the semester,
+I would have been able to save significant time while learning the LaTeX shortcuts.</li>
+<li><b>Learn LaTeX separately.</b> Part of what made Org difficult at the very beginning is that
+Org generated LaTeX, which exported to a PDF. If I was not happy with the PDF formatting,
+it was difficult to tell if the issue was with Org's formatting or with LaTeX. If I had
+learned pure LaTeX separately, it would have made the learning curve much less steep.</li>
+<li><b>Consider other options.</b> I do not regret using Emacs Org-Mode, but I would not necessarily
+recommend this as a note-taking system. I chose this over Notion and Obsidian because I
+felt it would have more customizability, and because I already had prior experience with
+Emacs. If someone is looking to learn a new note-taking system, though, I would either
+recommend Obsidian or NeoVim, since those have more recent documentation and cross-platform
+compatibility.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.1 (<a href="https://orgmode.org">Org</a> mode 9.5.2)</p>
+</div>
+</body>
+</html>

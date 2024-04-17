@@ -68,20 +68,26 @@ plates to to verify their thermal properties. /[[./thermistorBoard/thermistorBoa
 \\
 \\
 
+** Emacs Org note-taking
+During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
+me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is
+highly configurable, and I have really enjoyed using various features to take notes quickly
+and elegantly during class. /[[./noteTaking/noteTaking.html][(read more)]]/
+
+#+attr_html: :width 400px :align center
+[[../assets/noteTaking/notesPage28.png]]
+
+\\
+\\
+
 ** JUnit-style test cases
 In my Object-Oriented Programming (CS 1331) and Data Structures/Algorithsm (CS 1332) classes,
 students are encouraged to share tester files for the homework assignments on the class forum.
 My friend and I began working together to write the most elegant, thorough, and compartmentalized
-tester files to monopolize the market. /(read more)/
+tester files to monopolize the test case market.
 
-\\
-\\
-
-** LaTeX note-taking system using Emacs
-During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
-me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is
-highly configurable, and I have really enjoyed using various features to take notes quickly
-and elegantly during class. /(read more)/
+#+attr_html: :width 700px :align center
+[[../assets/driverImage.png]]
 
 \\
 \\

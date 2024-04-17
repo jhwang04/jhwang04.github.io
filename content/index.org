@@ -120,3 +120,12 @@ From the [[https://catalog.gatech.edu/courses-undergrad/phys][course catalog]] (
 A calculus-based course with laboratory covering electromagnetism, applications of
 electromagnetism, light, and modern physics.
 #+end_quote
+
+\\
+\\
+\\
+
+* Contact
+GitHub: [[https://github.com/jhwang04][@jhwang04]] \\
+LinkedIn: [[https://linkedin.com/in/justin-intae-hwang][Justin Hwang]] \\
+Email: justin@goliath.org

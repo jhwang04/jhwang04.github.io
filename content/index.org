@@ -3,6 +3,14 @@
 
 #+SETUPFILE: https://fniessen.github.io//org-html-themes/org/theme-readtheorg.setup
 
+# INSTRUCTIONS FOR USE:
+# https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
+#
+# 1) Open a shell and run ./build.sh in the jhwang04.github.io directory to build the site
+# 2) Run M-x httpd-serve-directory to start a local preview instance
+# 3) Open localhost:8080 to preview the site
+# 4) Commit and push to github
+
 [[./assets/portrait.jpg]]
 
 B.S. in Computer Engineering (Spring 2027) \\
@@ -13,16 +21,18 @@ Minor in Korean Language (Fall 2024)
 \\
 \\
 * About Me
-I am a first-year Computer Engineering major with concentrations in Computing Hardware and Robotics. I chose this
-field of study because I wanted to learn how computers work on a fundamental level, and to develop programming
+I am a second-year Computer Engineering major with concentrations in Computing Hardware and Robotics. I chose this
+field of study because I wanted to learn how computers work on a fundamental level and develop programming
 skills with concrete applications.
 
 One of these physical applications is with Hytech Racing, Georgia Tech's Electric FSAE team.
-Over the past two semesters, I have learned electric engineering fundamentals and contributed
-to a revamped firmware system.
+Over the past few semesters, I have learned electric engineering fundamentals and contributed
+to a revamped firmware system. For the 2024-25 school year, I am Hytech's Low Voltage Electronics
+lead. I am responsible for all LV board design, fabrication, and wire harnessing, as well as all
+firmware for this year's car.
 
-In my free time, I play intramural sports, sing in Georgia Tech Chamber Choir, and attend
-meetings for a campus ministry (Reformed University Fellowship).
+In my free time, I like to play intramural sports, sing in Georgia Tech Chamber Choir, run,
+and attend meetings for a campus ministry (Reformed University Fellowship).
 
 I strive to develop both technical and communication skills in professional engineering
 environments. I actively seek situations where I am the least experienced. I believe that
@@ -43,7 +53,7 @@ contributions to any engineering team.
 \\
 \\
 * Career Goals
-Five years from now, I hope to graduate with a Master's degree in Electrical and Computer
+In the next few years, I hope to graduate with a Master's degree in Electrical and Computer
 Engineering and work full-time.
 
 I plan to stay involved in Hytech Racing over the next few years to gain practical engineering experience. I have
@@ -51,7 +61,7 @@ found that I really enjoy the fast-paced environment and I'm excited to see what
 will learn.
 
 I also hope to get an internship or co-op starting *Spring/Summer 2025*. An internship
-would also develop practical skills, but in a more profesional environment.
+would help me to develop practical skills in a more profesional environment.
 
 \\
 \\
@@ -84,7 +94,8 @@ and elegantly during class. /[[./noteTaking/noteTaking.html][(read more)]]/
 In my Object-Oriented Programming (CS 1331) and Data Structures/Algorithsm (CS 1332) classes,
 students are encouraged to share tester files for the homework assignments on the class forum.
 My friend and I began working together to write the most elegant, thorough, and compartmentalized
-tester files to monopolize the test case market.
+tester files to monopolize the market. *In total, we published over 25,000 lines of code and
+reached an estimated 4,000+ downloads.* /[[./junits/junits.html][(read more)]]/
 
 #+attr_html: :width 700px :align center
 [[../assets/driverImage.png]]

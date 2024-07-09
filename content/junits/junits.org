@@ -1,0 +1,63 @@
+#+TITLE: JUnit Tests
+#+AUTHOR: Justin Hwang, Ryder Johnson
+
+#+SETUPFILE: https://fniessen.github.io//org-html-themes/org/theme-readtheorg.setup
+
+* [[../index.html][< Back Home]]
+
+* Overview
+In my Object-Oriented Programming (CS 1331) and Data Structures/Algorithsm (CS 1332) classes,
+students are encouraged to share tester files for the homework assignments on the class forum.
+My friend and I began working together to write the most elegant, thorough, and compartmentalized
+tester files to monopolize the test case market.
+
+* Why?
+For those classes, although we were not permitted to share our individual homework code,
+we were highly encourage to share tester ("driver") files to check each method's functionality.
+We had three reasons for writing extensive tester files:
+1) *To help our classmates debug.* A good set of a unit tests will significantly aid
+   the debugging process by pointing out which specifications your code does not yet meet.
+2) *To encourage our classmates to keep working on their code.* If there were no test cases
+   to fail, then students may not realize that their code doesn't meet the specifications.
+3) *To test our own code.* Even if we didn't want to help our classmates, we would still need
+   to test our own code extensively before submission.
+
+* How?
+
+Although the homeworks were all in Java, we did not want to use the JUnit library initially.
+Using the JUnit library would require all other students to install the correct JUnit
+version to their own IDEs, or to download a =.jar= file and add it to their classpath, which
+was outside of the scope of the class. In order to maximize our tester files' reach, we
+limited ourselves to just one =.java= file with no external dependencies. This raised
+a variety of technical challenges, which you can read about on [[https://rydersecondbrain.netlify.app/docs/automated-driver-testing][Ryder's Blog]].
+
+Our notable features included:
+- Console I/O testing
+- Custom annotations-based system to print debugging tips for every single test case
+- File I/O testing (with file creation, checking, and cleanup included)
+- Java Reflections-based tests to call private fields and methods
+- Reflections-based initialization to avoid dependence on correct constructors
+- *Over 25,000 lines of published code, with an estimated 4,000+ downloads*
+- Brute force testing of binary trees, AVLs, and other data structures, with compressed & encoded data stored in Strings
+- ASCII-based console output to illustrate trees, lists, heaps, and hash maps in console output
+- Multi-threading to timeout tests in the case of an infinite loop
+- Zero missed homework testers for two semesters
+  
+* Reflection
+
+When I started writing tester files, I had no idea how far they would take me. By writing these
+test cases every week, I started to gain name recognition among my classmates, TAs, and even
+my professors. Because of these tester files, I became a TA for the Object Oriented Programming
+class and was able to contribute to the course's autograder.
+
+By writing hundreds of test cases week after week, I gained firsthand experience with
+test-driven development. Some weeks, I experimented with writing test cases before writing
+my own homework to minimize how many edge cases slip through the cracks. By making these
+files, I've spent dozens of hours writing code in a way that is not just functional,
+but thoroughly testable. Although writing unit tests are often the least-favorite part
+of development, I've gained an appreciation for their functionality and necessity.
+
+Also, just as a personal note, the name recognition spread much further than I thought it would.
+I've been introduced to new friends and classmates as "the test driver guy" and been immediately
+met with enthusiastic "thank-you"s, and I really appreciated the support throughout the year. It
+was a long, unforseen journey, but every test case was a small step in the right direction.

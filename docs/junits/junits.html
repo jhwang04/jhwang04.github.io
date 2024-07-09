@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JUnit Tests</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JUnit Tests</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org314292a">&lt; Back Home</a></li>
+<li><a href="#org1414506">Overview</a></li>
+<li><a href="#orgf070e71">Why?</a></li>
+<li><a href="#org1964095">How?</a></li>
+<li><a href="#org068b3e0">Reflection</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org314292a" class="outline-2">
+<h2 id="org314292a"><a href="../index.html">&lt; Back Home</a></h2>
+</div>
+
+<div id="outline-container-org1414506" class="outline-2">
+<h2 id="org1414506">Overview</h2>
+<div class="outline-text-2" id="text-org1414506">
+<p>
+In my Object-Oriented Programming (CS 1331) and Data Structures/Algorithsm (CS 1332) classes,
+students are encouraged to share tester files for the homework assignments on the class forum.
+My friend and I began working together to write the most elegant, thorough, and compartmentalized
+tester files to monopolize the test case market.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf070e71" class="outline-2">
+<h2 id="orgf070e71">Why?</h2>
+<div class="outline-text-2" id="text-orgf070e71">
+<p>
+For those classes, although we were not permitted to share our individual homework code,
+we were highly encourage to share tester ("driver") files to check each method's functionality.
+We had three reasons for writing extensive tester files:
+</p>
+<ol class="org-ol">
+<li><b>To help our classmates debug.</b> A good set of a unit tests will significantly aid
+the debugging process by pointing out which specifications your code does not yet meet.</li>
+<li><b>To encourage our classmates to keep working on their code.</b> If there were no test cases
+to fail, then students may not realize that their code doesn't meet the specifications.</li>
+<li><b>To test our own code.</b> Even if we didn't want to help our classmates, we would still need
+to test our own code extensively before submission.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org1964095" class="outline-2">
+<h2 id="org1964095">How?</h2>
+<div class="outline-text-2" id="text-org1964095">
+<p>
+Although the homeworks were all in Java, we did not want to use the JUnit library initially.
+Using the JUnit library would require all other students to install the correct JUnit
+version to their own IDEs, or to download a <code>.jar</code> file and add it to their classpath, which
+was outside of the scope of the class. In order to maximize our tester files' reach, we
+limited ourselves to just one <code>.java</code> file with no external dependencies. This raised
+a variety of technical challenges, which you can read about on <a href="https://rydersecondbrain.netlify.app/docs/automated-driver-testing">Ryder's Blog</a>.
+</p>
+
+<p>
+Our notable features included:
+</p>
+<ul class="org-ul">
+<li>Console I/O testing</li>
+<li>Custom annotations-based system to print debugging tips for every single test case</li>
+<li>File I/O testing (with file creation, checking, and cleanup included)</li>
+<li>Java Reflections-based tests to call private fields and methods</li>
+<li>Reflections-based initialization to avoid dependence on correct constructors</li>
+<li><b>Over 25,000 lines of published code, with an estimated 4,000+ downloads</b></li>
+<li>Brute force testing of binary trees, AVLs, and other data structures, with compressed &amp; encoded data stored in Strings</li>
+<li>ASCII-based console output to illustrate trees, lists, heaps, and hash maps in console output</li>
+<li>Multi-threading to timeout tests in the case of an infinite loop</li>
+<li>Zero missed homework testers for two semesters</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org068b3e0" class="outline-2">
+<h2 id="org068b3e0">Reflection</h2>
+<div class="outline-text-2" id="text-org068b3e0">
+<p>
+When I started writing tester files, I had no idea how far they would take me. By writing these
+test cases every week, I started to gain name recognition among my classmates, TAs, and even
+my professors. Because of these tester files, I became a TA for the Object Oriented Programming
+class and was able to contribute to the course's autograder.
+</p>
+
+<p>
+By writing hundreds of test cases week after week, I gained firsthand experience with
+test-driven development. Some weeks, I experimented with writing test cases before writing
+my own homework to minimize how many edge cases slip through the cracks. By making these
+files, I've spent dozens of hours writing code in a way that is not just functional,
+but thoroughly testable. Although writing unit tests are often the least-favorite part
+of development, I've gained an appreciation for their functionality and necessity.
+</p>
+
+<p>
+Also, just as a personal note, the name recognition spread much further than I thought it would.
+I've been introduced to new friends and classmates as "the test driver guy" and been immediately
+met with enthusiastic "thank-you"s, and I really appreciated the support throughout the year. It
+was a long, unforseen journey, but every test case was a small step in the right direction.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.1 (<a href="https://orgmode.org">Org</a> mode 9.5.2)</p>
+</div>
+</body>
+</html>

@@ -67,18 +67,7 @@ would help me to develop practical skills in a more profesional environment.
 \\
 \\
 * Technical Projects
-** Thermistor Board Project (Hytech Racing)
-For Hytech, we needed an array of thermistors to measure temperature data at many different
-points. Initially, this was designed to measure data in an array between two large aluminum
-plates to to verify their thermal properties. /[[./thermistorBoard/thermistorBoard.org][(read more)]]/
-
-#+attr_html: :width 400px :align center
-[[../assets/thermistor_board/Thermistor_Board_multiplexer_layout.png]]
-
-\\
-\\
-
-** Emacs Org note-taking
+** Emacs Org note-taking /(Spring 2024 - Present)/
 During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
 me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is
 highly configurable, and I have really enjoyed using various features to take notes quickly
@@ -90,7 +79,7 @@ and elegantly during class. /[[./noteTaking/noteTaking.html][(read more)]]/
 \\
 \\
 
-** JUnit-style test cases
+** JUnit-style test cases /(Fall 2023 - Spring 2024)/
 In my Object-Oriented Programming (CS 1331) and Data Structures/Algorithsm (CS 1332) classes,
 students are encouraged to share tester files for the homework assignments on the class forum.
 My friend and I began working together to write the most elegant, thorough, and compartmentalized
@@ -103,17 +92,38 @@ reached an estimated 4,000+ downloads.* /[[./junits/junits.html][(read more)]]/
 \\
 \\
 
-* Relevant Coursework
-** Digital Systems & Design
-From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2020):
-#+begin_quote
+** Thermistor Board Project (Hytech Racing) /(Fall 2023)/
+For Hytech, we needed an array of thermistors to measure temperature data at many different
+points. Initially, this was designed to measure data in an array between two large aluminum
+plates to to verify their thermal properties. /[[./thermistorBoard/thermistorBoard.org][(read more)]]/
 
-Computer system and digital design principles. Switch and gate design, Boolean algebra, [...]
-storage elements. Datapath, memory organization, instruction set architecture, assembly
-language.
+#+attr_html: :width 400px :align center
+[[../assets/thermistor_board/Thermistor_Board_multiplexer_layout.png]]
+
+\\
+\\
+
+
+* Relevant Coursework
+** Programming for Hardware and Software Systems (Fall 2024)
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2035):
+#+begin_quote
+Creation of complex execution and storage mechanisms, based on instruction set architecture, for
+software design including high-level programming languages and operating systems.
 #+end_quote
 
-** Data Structures & Algorithms
+** Digital Design Laboratory (Fall 2024)
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2031):
+#+begin_quote
+Design and implementation of digital systems, including a team design project. CAD tools, project
+design methodologies, logic synthesis, and assembly language programming.
+#+end_quote
+** Circuit Analysis (Fall 2024)
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2040):
+#+begin_quote
+Basic concepts of DC and AC circuit theory and analysis.
+#+end_quote
+** Data Structures & Algorithms (Spring 2024)
 From the [[https://catalog.gatech.edu/courses-undergrad/cs][course catalog]] (CS 1332):
 #+begin_quote
 
@@ -121,7 +131,7 @@ Computer data structures and algorithms in the context of object-oriented progra
 Focus on software development towards applications.
 #+end_quote
 
-** Discrete Math for CS
+** Discrete Math for CS (Spring 2024)
 From the [[https://catalog.gatech.edu/courses-undergrad/cs][course catalog]] (CS 2050):
 #+begin_quote
 
@@ -130,7 +140,8 @@ recursion. Complexity and order of growth. Number theoretic principles and algor
 Counting and computability.
 #+end_quote
 
-** Intro Physics II
+** Intro Physics II (Spring 2024)
+
 From the [[https://catalog.gatech.edu/courses-undergrad/phys][course catalog]] (PHYS 2212):
 #+begin_quote
 
@@ -141,6 +152,16 @@ electromagnetism, light, and modern physics.
 \\
 \\
 \\
+
+** Digital Systems & Design (Fall 2023)
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2020):
+#+begin_quote
+
+Computer system and digital design principles. Switch and gate design, Boolean algebra, [...]
+storage elements. Datapath, memory organization, instruction set architecture, assembly
+language.
+#+end_quote
+
 
 * Contact
 GitHub: [[https://github.com/jhwang04][@jhwang04]] \\

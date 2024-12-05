@@ -1,13 +1,17 @@
 #+TITLE: Justin Hwang
 #+AUTHOR: Justin Hwang
 
+#+BEGIN_COMMENT
 #+SETUPFILE: https://fniessen.github.io//org-html-themes/org/theme-readtheorg.setup
+#+END_COMMENT
+#+SETUPFILE: ../ReadTheOrgSetupFile.setup
+{{{disable-search}}}
 
 # INSTRUCTIONS FOR USE:
 # https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
 #
 # 1) Open a shell and run ./build.sh in the jhwang04.github.io directory to build the site
-# 2) Run M-x httpd-serve-directory to start a local preview instance
+# 2) Run M-x httpd-serve-directory in the docs directory to start a local preview instance
 # 3) Open localhost:8080 to preview the site
 # 4) Commit and push to github
 
@@ -67,6 +71,16 @@ would help me to develop practical skills in a more profesional environment.
 \\
 \\
 * Technical Projects
+
+** Minecraft Redstone Computer /(Fall 2024)/
+In my Digital Design classes, I constantly thought /hmm, I could make this in Minecraft/. Growing
+up, I'd spent countless hours using the in-game circuit system to make variou small mechanisms,
+but the same transistor-level building blocks could theoretically be used to make a full
+computer. So, my roommates and I decided to start up a new server to build a Turing-complete
+computer, starting with the simplest gates and progressing through a fully-functional processor,
+including a 16-bit adder, addressable RAM, a program counter, a logical unit, and a
+4-digit hex display.
+
 ** Emacs Org note-taking /(Spring 2024 - Present)/
 During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
 me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is

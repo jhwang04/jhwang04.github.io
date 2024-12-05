@@ -1,7 +1,11 @@
 #+TITLE: Emacs note-taking system
 #+AUTHOR: Justin Hwang
 
+#+BEGIN_COMMENT
 #+SETUPFILE: https://fniessen.github.io//org-html-themes/org/theme-readtheorg.setup
+#+END_COMMENT
+#+SETUPFILE: ../../ReadTheOrgSetupFile.setup
+{{{disable-search}}}
 
 * [[../index.html][< Back Home]]
 

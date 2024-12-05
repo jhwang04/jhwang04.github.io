@@ -9,10 +9,13 @@
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">disableSearch();</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -21,30 +24,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org25c5f1b">About Me</a></li>
-<li><a href="#org3cda933">Resume</a></li>
-<li><a href="#org8a48e5d">Career Goals</a></li>
-<li><a href="#orgd775927">Technical Projects</a>
+<li><a href="#org85b23c8">About Me</a></li>
+<li><a href="#org17c4ff2">Resume</a></li>
+<li><a href="#org6701a7b">Career Goals</a></li>
+<li><a href="#org85a9722">Technical Projects</a>
 <ul>
-<li><a href="#org991ac42">Thermistor Board Project (Hytech Racing)</a></li>
-<li><a href="#orgc1c60a7">Emacs Org note-taking</a></li>
-<li><a href="#orgbdb4c0f">JUnit-style test cases</a></li>
+<li><a href="#org70d4c48">Emacs Org note-taking <i>(Spring 2024 - Present)</i></a></li>
+<li><a href="#org427235a">JUnit-style test cases <i>(Fall 2023 - Spring 2024)</i></a></li>
+<li><a href="#orgee3883c">Thermistor Board Project (Hytech Racing) <i>(Fall 2023)</i></a></li>
 </ul>
 </li>
-<li><a href="#org970c187">Relevant Coursework</a>
+<li><a href="#orgadff194">Relevant Coursework</a>
 <ul>
-<li><a href="#org5b1f4a5">Digital Systems &amp; Design</a></li>
-<li><a href="#org1f489cc">Data Structures &amp; Algorithms</a></li>
-<li><a href="#org6cda638">Discrete Math for CS</a></li>
-<li><a href="#org69b2fcf">Intro Physics II</a></li>
+<li><a href="#org8a9f965">Programming for Hardware and Software Systems (Fall 2024)</a></li>
+<li><a href="#orgabe662e">Digital Design Laboratory (Fall 2024)</a></li>
+<li><a href="#org4d2e20c">Circuit Analysis (Fall 2024)</a></li>
+<li><a href="#org15d9288">Data Structures &amp; Algorithms (Spring 2024)</a></li>
+<li><a href="#org631e22a">Discrete Math for CS (Spring 2024)</a></li>
+<li><a href="#orgc3b4034">Intro Physics II (Spring 2024)</a></li>
+<li><a href="#org61b6e89">Digital Systems &amp; Design (Fall 2023)</a></li>
 </ul>
 </li>
-<li><a href="#org8c68f79">Contact</a></li>
+<li><a href="#orgfaff132">Contact</a></li>
 </ul>
 </div>
 </div>
 
-<div id="org999accc" class="figure">
+<div id="org1e77dad" class="figure">
 <p><img src="./assets/portrait.jpg" alt="portrait.jpg" />
 </p>
 </div>
@@ -60,9 +66,9 @@ Minor in Korean Language (Fall 2024)
 <br />
 <br />
 </p>
-<div id="outline-container-org25c5f1b" class="outline-2">
-<h2 id="org25c5f1b">About Me</h2>
-<div class="outline-text-2" id="text-org25c5f1b">
+<div id="outline-container-org85b23c8" class="outline-2">
+<h2 id="org85b23c8">About Me</h2>
+<div class="outline-text-2" id="text-org85b23c8">
 <p>
 I am a second-year Computer Engineering major with concentrations in Computing Hardware and Robotics. I chose this
 field of study because I wanted to learn how computers work on a fundamental level and develop programming
@@ -97,9 +103,9 @@ contributions to any engineering team.
 </p>
 </div>
 </div>
-<div id="outline-container-org3cda933" class="outline-2">
-<h2 id="org3cda933">Resume</h2>
-<div class="outline-text-2" id="text-org3cda933">
+<div id="outline-container-org17c4ff2" class="outline-2">
+<h2 id="org17c4ff2">Resume</h2>
+<div class="outline-text-2" id="text-org17c4ff2">
 <embed src="./assets/resume/Hwang_Justin_Resume.pdf" width="600" height="780" type="application/pdf">
 
 <p>
@@ -109,9 +115,9 @@ contributions to any engineering team.
 </p>
 </div>
 </div>
-<div id="outline-container-org8a48e5d" class="outline-2">
-<h2 id="org8a48e5d">Career Goals</h2>
-<div class="outline-text-2" id="text-org8a48e5d">
+<div id="outline-container-org6701a7b" class="outline-2">
+<h2 id="org6701a7b">Career Goals</h2>
+<div class="outline-text-2" id="text-org6701a7b">
 <p>
 In the next few years, I hope to graduate with a Master's degree in Electrical and Computer
 Engineering and work full-time.
@@ -135,35 +141,13 @@ would help me to develop practical skills in a more profesional environment.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd775927" class="outline-2">
-<h2 id="orgd775927">Technical Projects</h2>
-<div class="outline-text-2" id="text-orgd775927">
+<div id="outline-container-org85a9722" class="outline-2">
+<h2 id="org85a9722">Technical Projects</h2>
+<div class="outline-text-2" id="text-org85a9722">
 </div>
-<div id="outline-container-org991ac42" class="outline-3">
-<h3 id="org991ac42">Thermistor Board Project (Hytech Racing)</h3>
-<div class="outline-text-3" id="text-org991ac42">
-<p>
-For Hytech, we needed an array of thermistors to measure temperature data at many different
-points. Initially, this was designed to measure data in an array between two large aluminum
-plates to to verify their thermal properties. <i><a href="./thermistorBoard/thermistorBoard.html">(read more)</a></i>
-</p>
-
-
-<div id="org6521387" class="figure">
-<p><img src="../assets/thermistor_board/Thermistor_Board_multiplexer_layout.png" alt="Thermistor_Board_multiplexer_layout.png" width="400px" align="center" />
-</p>
-</div>
-
-<p>
-<br />
-<br />
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgc1c60a7" class="outline-3">
-<h3 id="orgc1c60a7">Emacs Org note-taking</h3>
-<div class="outline-text-3" id="text-orgc1c60a7">
+<div id="outline-container-org70d4c48" class="outline-3">
+<h3 id="org70d4c48">Emacs Org note-taking <i>(Spring 2024 - Present)</i></h3>
+<div class="outline-text-3" id="text-org70d4c48">
 <p>
 During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
 me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is
@@ -172,7 +156,7 @@ and elegantly during class. <i><a href="./noteTaking/noteTaking.html">(read more
 </p>
 
 
-<div id="orgf28f7dd" class="figure">
+<div id="org9e8d4c9" class="figure">
 <p><img src="../assets/noteTaking/notesPage28.png" alt="notesPage28.png" width="400px" align="center" />
 </p>
 </div>
@@ -184,9 +168,9 @@ and elegantly during class. <i><a href="./noteTaking/noteTaking.html">(read more
 </div>
 </div>
 
-<div id="outline-container-orgbdb4c0f" class="outline-3">
-<h3 id="orgbdb4c0f">JUnit-style test cases</h3>
-<div class="outline-text-3" id="text-orgbdb4c0f">
+<div id="outline-container-org427235a" class="outline-3">
+<h3 id="org427235a">JUnit-style test cases <i>(Fall 2023 - Spring 2024)</i></h3>
+<div class="outline-text-3" id="text-org427235a">
 <p>
 In my Object-Oriented Programming (CS 1331) and Data Structures/Algorithsm (CS 1332) classes,
 students are encouraged to share tester files for the homework assignments on the class forum.
@@ -196,7 +180,7 @@ reached an estimated 4,000+ downloads.</b> <i><a href="./junits/junits.html">(re
 </p>
 
 
-<div id="orgfabf5f7" class="figure">
+<div id="org3175c5b" class="figure">
 <p><img src="../assets/driverImage.png" alt="driverImage.png" width="700px" align="center" />
 </p>
 </div>
@@ -207,35 +191,80 @@ reached an estimated 4,000+ downloads.</b> <i><a href="./junits/junits.html">(re
 </p>
 </div>
 </div>
+
+<div id="outline-container-orgee3883c" class="outline-3">
+<h3 id="orgee3883c">Thermistor Board Project (Hytech Racing) <i>(Fall 2023)</i></h3>
+<div class="outline-text-3" id="text-orgee3883c">
+<p>
+For Hytech, we needed an array of thermistors to measure temperature data at many different
+points. Initially, this was designed to measure data in an array between two large aluminum
+plates to to verify their thermal properties. <i><a href="./thermistorBoard/thermistorBoard.html">(read more)</a></i>
+</p>
+
+
+<div id="org66740a2" class="figure">
+<p><img src="../assets/thermistor_board/Thermistor_Board_multiplexer_layout.png" alt="Thermistor_Board_multiplexer_layout.png" width="400px" align="center" />
+</p>
 </div>
 
-<div id="outline-container-org970c187" class="outline-2">
-<h2 id="org970c187">Relevant Coursework</h2>
-<div class="outline-text-2" id="text-org970c187">
-</div>
-<div id="outline-container-org5b1f4a5" class="outline-3">
-<h3 id="org5b1f4a5">Digital Systems &amp; Design</h3>
-<div class="outline-text-3" id="text-org5b1f4a5">
 <p>
-From the <a href="https://catalog.gatech.edu/courses-undergrad/ece">course catalog</a> (ECE 2020):
+<br />
+<br />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgadff194" class="outline-2">
+<h2 id="orgadff194">Relevant Coursework</h2>
+<div class="outline-text-2" id="text-orgadff194">
+</div>
+<div id="outline-container-org8a9f965" class="outline-3">
+<h3 id="org8a9f965">Programming for Hardware and Software Systems (Fall 2024)</h3>
+<div class="outline-text-3" id="text-org8a9f965">
+<p>
+From the <a href="https://catalog.gatech.edu/courses-undergrad/ece">course catalog</a> (ECE 2035):
 </p>
 <blockquote>
 <p>
-
-</p>
-
-<p>
-Computer system and digital design principles. Switch and gate design, Boolean algebra, [&#x2026;]
-storage elements. Datapath, memory organization, instruction set architecture, assembly
-language.
+Creation of complex execution and storage mechanisms, based on instruction set architecture, for
+software design including high-level programming languages and operating systems.
 </p>
 </blockquote>
 </div>
 </div>
 
-<div id="outline-container-org1f489cc" class="outline-3">
-<h3 id="org1f489cc">Data Structures &amp; Algorithms</h3>
-<div class="outline-text-3" id="text-org1f489cc">
+<div id="outline-container-orgabe662e" class="outline-3">
+<h3 id="orgabe662e">Digital Design Laboratory (Fall 2024)</h3>
+<div class="outline-text-3" id="text-orgabe662e">
+<p>
+From the <a href="https://catalog.gatech.edu/courses-undergrad/ece">course catalog</a> (ECE 2031):
+</p>
+<blockquote>
+<p>
+Design and implementation of digital systems, including a team design project. CAD tools, project
+design methodologies, logic synthesis, and assembly language programming.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org4d2e20c" class="outline-3">
+<h3 id="org4d2e20c">Circuit Analysis (Fall 2024)</h3>
+<div class="outline-text-3" id="text-org4d2e20c">
+<p>
+From the <a href="https://catalog.gatech.edu/courses-undergrad/ece">course catalog</a> (ECE 2040):
+</p>
+<blockquote>
+<p>
+Basic concepts of DC and AC circuit theory and analysis.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org15d9288" class="outline-3">
+<h3 id="org15d9288">Data Structures &amp; Algorithms (Spring 2024)</h3>
+<div class="outline-text-3" id="text-org15d9288">
 <p>
 From the <a href="https://catalog.gatech.edu/courses-undergrad/cs">course catalog</a> (CS 1332):
 </p>
@@ -252,9 +281,9 @@ Focus on software development towards applications.
 </div>
 </div>
 
-<div id="outline-container-org6cda638" class="outline-3">
-<h3 id="org6cda638">Discrete Math for CS</h3>
-<div class="outline-text-3" id="text-org6cda638">
+<div id="outline-container-org631e22a" class="outline-3">
+<h3 id="org631e22a">Discrete Math for CS (Spring 2024)</h3>
+<div class="outline-text-3" id="text-org631e22a">
 <p>
 From the <a href="https://catalog.gatech.edu/courses-undergrad/cs">course catalog</a> (CS 2050):
 </p>
@@ -272,9 +301,9 @@ Counting and computability.
 </div>
 </div>
 
-<div id="outline-container-org69b2fcf" class="outline-3">
-<h3 id="org69b2fcf">Intro Physics II</h3>
-<div class="outline-text-3" id="text-org69b2fcf">
+<div id="outline-container-orgc3b4034" class="outline-3">
+<h3 id="orgc3b4034">Intro Physics II (Spring 2024)</h3>
+<div class="outline-text-3" id="text-orgc3b4034">
 <p>
 From the <a href="https://catalog.gatech.edu/courses-undergrad/phys">course catalog</a> (PHYS 2212):
 </p>
@@ -296,11 +325,32 @@ electromagnetism, light, and modern physics.
 </p>
 </div>
 </div>
+
+<div id="outline-container-org61b6e89" class="outline-3">
+<h3 id="org61b6e89">Digital Systems &amp; Design (Fall 2023)</h3>
+<div class="outline-text-3" id="text-org61b6e89">
+<p>
+From the <a href="https://catalog.gatech.edu/courses-undergrad/ece">course catalog</a> (ECE 2020):
+</p>
+<blockquote>
+<p>
+
+</p>
+
+<p>
+Computer system and digital design principles. Switch and gate design, Boolean algebra, [&#x2026;]
+storage elements. Datapath, memory organization, instruction set architecture, assembly
+language.
+</p>
+</blockquote>
+</div>
+</div>
 </div>
 
-<div id="outline-container-org8c68f79" class="outline-2">
-<h2 id="org8c68f79">Contact</h2>
-<div class="outline-text-2" id="text-org8c68f79">
+
+<div id="outline-container-orgfaff132" class="outline-2">
+<h2 id="orgfaff132">Contact</h2>
+<div class="outline-text-2" id="text-orgfaff132">
 <p>
 GitHub: <a href="https://github.com/jhwang04">@jhwang04</a> <br />
 LinkedIn: <a href="https://linkedin.com/in/justin-intae-hwang">Justin Hwang</a> <br />
@@ -310,7 +360,7 @@ Email: justin@goliath.org
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.1 (<a href="https://orgmode.org">Org</a> mode 9.5.2)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
 </div>
 </body>
 </html>

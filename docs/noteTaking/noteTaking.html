@@ -9,31 +9,45 @@
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script type="text/javascript">disableSearch();</script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -42,18 +56,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5a27251">&lt; Back Home</a></li>
-<li><a href="#org4b94dce">Overview</a></li>
-<li><a href="#org692b8ca">Why?</a></li>
-<li><a href="#org0b2b003">Note-taking process</a></li>
-<li><a href="#orgbfed687">Reflection</a></li>
+<li><a href="#org83d13f4">&lt; Back Home</a></li>
+<li><a href="#org1e14573">Overview</a></li>
+<li><a href="#orgd0237e7">Why?</a></li>
+<li><a href="#org2d5965b">Note-taking process</a></li>
+<li><a href="#orgdef28d4">Reflection</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5a27251" class="outline-2">
-<h2 id="org5a27251"><a href="../index.html">&lt; Back Home</a></h2>
-<div class="outline-text-2" id="text-org5a27251">
+<div id="outline-container-org83d13f4" class="outline-2">
+<h2 id="org83d13f4"><a href="../index.html">&lt; Back Home</a></h2>
+<div class="outline-text-2" id="text-org83d13f4">
 <p>
 <br />
 <br />
@@ -66,9 +80,9 @@
 </div>
 </div>
 
-<div id="outline-container-org4b94dce" class="outline-2">
-<h2 id="org4b94dce">Overview</h2>
-<div class="outline-text-2" id="text-org4b94dce">
+<div id="outline-container-org1e14573" class="outline-2">
+<h2 id="org1e14573">Overview</h2>
+<div class="outline-text-2" id="text-org1e14573">
 <p>
 During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
 me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is
@@ -105,9 +119,9 @@ reformatted/modified after the lecture.
 </div>
 </div>
 
-<div id="outline-container-org692b8ca" class="outline-2">
-<h2 id="org692b8ca">Why?</h2>
-<div class="outline-text-2" id="text-org692b8ca">
+<div id="outline-container-orgd0237e7" class="outline-2">
+<h2 id="orgd0237e7">Why?</h2>
+<div class="outline-text-2" id="text-orgd0237e7">
 <p>
 For my Discrete Math class, we often use mathematical and logical symbols
 such as AND (\(\land\)), OR (\(\lor\)), FOR ALL (\(\forall\)), etc. These symbols
@@ -135,11 +149,11 @@ and colored boxes without much trouble.
 </div>
 </div>
 
-<div id="outline-container-org0b2b003" class="outline-2">
-<h2 id="org0b2b003">Note-taking process</h2>
-<div class="outline-text-2" id="text-org0b2b003">
+<div id="outline-container-org2d5965b" class="outline-2">
+<h2 id="org2d5965b">Note-taking process</h2>
+<div class="outline-text-2" id="text-org2d5965b">
 
-<div id="orgd58bf70" class="figure">
+<div id="org5ec6d15" class="figure">
 <p><img src="../assets/noteTaking/raw_notes.png" alt="raw_notes.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Unrendered notes in Emacs</p>
@@ -153,7 +167,7 @@ formats the output in a gray, monospace box.
 </p>
 
 
-<div id="org68e4af2" class="figure">
+<div id="org2baf7a8" class="figure">
 <p><img src="../assets/noteTaking/rendered_notes.png" alt="rendered_notes.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Rendered notes</p>
@@ -166,9 +180,9 @@ formats the output in a gray, monospace box.
 </div>
 </div>
 
-<div id="outline-container-orgbfed687" class="outline-2">
-<h2 id="orgbfed687">Reflection</h2>
-<div class="outline-text-2" id="text-orgbfed687">
+<div id="outline-container-orgdef28d4" class="outline-2">
+<h2 id="orgdef28d4">Reflection</h2>
+<div class="outline-text-2" id="text-orgdef28d4">
 <p>
 Overall, this "project" has been really interesting. I did not start the semester
 planning on learning a new system for note-taking, but this was a solution I stumbled
@@ -197,7 +211,7 @@ compatibility.</li>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.1 (<a href="https://orgmode.org">Org</a> mode 9.5.2)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.4 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
 </div>
 </body>
 </html>

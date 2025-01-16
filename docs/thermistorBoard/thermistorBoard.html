@@ -24,28 +24,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge325b90">&lt; Back Home</a></li>
-<li><a href="#orgba25ced">Overview</a></li>
-<li><a href="#org77ab024">Requirements</a></li>
-<li><a href="#org8d73f4e">Design</a></li>
-<li><a href="#org496101a">Building &amp; Coding</a></li>
-<li><a href="#orgeeaa66b">Reflection</a></li>
+<li><a href="#org19f0f23">&lt; Back Home</a></li>
+<li><a href="#org0ddf01c">Overview</a></li>
+<li><a href="#org30d40a1">Requirements</a></li>
+<li><a href="#orgbda1086">Design</a></li>
+<li><a href="#orgcad805f">Building &amp; Coding</a></li>
+<li><a href="#org2f404a7">Reflection</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge325b90" class="outline-2">
-<h2 id="orge325b90"><a href="../index.html">&lt; Back Home</a></h2>
-<div class="outline-text-2" id="text-orge325b90">
+<div id="outline-container-org19f0f23" class="outline-2">
+<h2 id="org19f0f23"><a href="../index.html">&lt; Back Home</a></h2>
+<div class="outline-text-2" id="text-org19f0f23">
 <p>
 <br />
 <br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgba25ced" class="outline-2">
-<h2 id="orgba25ced">Overview</h2>
-<div class="outline-text-2" id="text-orgba25ced">
+<div id="outline-container-org0ddf01c" class="outline-2">
+<h2 id="org0ddf01c">Overview</h2>
+<div class="outline-text-2" id="text-org0ddf01c">
 <p>
 For Hytech, we needed an array of thermistors to measure temperature data at many different
 points. Initially, this was designed to measure data in an array between two large aluminum
@@ -59,9 +59,9 @@ this we needed to measure data between solid plates.
 </p>
 </div>
 </div>
-<div id="outline-container-org77ab024" class="outline-2">
-<h2 id="org77ab024">Requirements</h2>
-<div class="outline-text-2" id="text-org77ab024">
+<div id="outline-container-org30d40a1" class="outline-2">
+<h2 id="org30d40a1">Requirements</h2>
+<div class="outline-text-2" id="text-org30d40a1">
 <p>
 In order for our solution to be viable, we needed to meet the following criteria.
 </p>
@@ -78,9 +78,9 @@ on a 9" x 13" plate</i>)</li>
 </p>
 </div>
 </div>
-<div id="outline-container-org8d73f4e" class="outline-2">
-<h2 id="org8d73f4e">Design</h2>
-<div class="outline-text-2" id="text-org8d73f4e">
+<div id="outline-container-orgbda1086" class="outline-2">
+<h2 id="orgbda1086">Design</h2>
+<div class="outline-text-2" id="text-orgbda1086">
 <p>
 We decided to use an Arduino Teensy 4.1 with analog multiplexers to record the data. Since
 the Arduino does not have sufficient analog pins for our 60+ thermistors, we instead
@@ -94,7 +94,7 @@ connected to the Teensy.
 </p>
 
 
-<div id="orgaf27f55" class="figure">
+<div id="org9e6f35a" class="figure">
 <p><img src="../assets/thermistor_board/ThermistorBoardEAGLEDiagram.jpg" alt="ThermistorBoardEAGLEDiagram.jpg" />
 </p>
 <p><span class="figure-number">Figure 1: </span>EAGLE Board Diagram. PDF can be found <a href="../assets/thermistor_board/ThermistorBoardEAGLEDiagram.pdf">here</a></p>
@@ -106,9 +106,9 @@ connected to the Teensy.
 </p>
 </div>
 </div>
-<div id="outline-container-org496101a" class="outline-2">
-<h2 id="org496101a">Building &amp; Coding</h2>
-<div class="outline-text-2" id="text-org496101a">
+<div id="outline-container-orgcad805f" class="outline-2">
+<h2 id="orgcad805f">Building &amp; Coding</h2>
+<div class="outline-text-2" id="text-orgcad805f">
 <p>
 After ordering the board, we had to solder each of the thermistor wires to blue/orange wires,
 Molex crimp the other ends of the wires, and then connect them to 16-pin Molex connectors.
@@ -116,14 +116,14 @@ We needed to use Kapton tape to insulate the leads on each thermistor.
 </p>
 
 
-<div id="orgb566813" class="figure">
+<div id="orgae3fc6e" class="figure">
 <p><img src="../assets/thermistor_board/thermistor_wires_image.jpeg" alt="thermistor_wires_image.jpeg" width="500px" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Soldered, crimped, insulated, labeled bundle of 8 thermistors</p>
 </div>
 
 
-<div id="org514f15e" class="figure">
+<div id="org6cc171c" class="figure">
 <p><img src="../assets/thermistor_board/Thermistor_Board_multiplexer_layout.png" alt="Thermistor_Board_multiplexer_layout.png" width="500px" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Thermistor naming diagram to organize data</p>
@@ -135,7 +135,7 @@ print the data on the Serial monitor.
 </p>
 
 
-<div id="org671b80d" class="figure">
+<div id="org5d8fe50" class="figure">
 <p><img src="../assets/thermistor_board/thermistor_code_screenshot.png" alt="thermistor_code_screenshot.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>Excert of main <i>loop()</i> function. Full code can be found <a href="https://github.com/hytech-racing/code-2024/blob/thermistor-board/Utilities/thermistor_board/thermistor_board/thermistor_board.ino">here</a></p>
@@ -152,7 +152,7 @@ data without a computer being plugged in, so we saved the data locally to a micr
 Since it was saved as a CSV, we could analyze the data in a spreadsheet.
 </p>
 
-<div id="org46c6eee" class="figure">
+<div id="org3fc21e9" class="figure">
 <p><img src="../assets/thermistor_board/Thermistor_Data.png" alt="Thermistor_Data.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>Thermistor data logged in a spreadsheet with slight conditional formatting.</p>
@@ -165,7 +165,7 @@ it is currently being used to test battery segments, and is reportedly working f
 </p>
 
 
-<div id="org6d751bb" class="figure">
+<div id="org5252e02" class="figure">
 <p><img src="../assets/thermistor_board/finishedBoard.jpg" alt="finishedBoard.jpg" />
 </p>
 <p><span class="figure-number">Figure 6: </span>Completed thermistor board</p>
@@ -177,9 +177,9 @@ it is currently being used to test battery segments, and is reportedly working f
 </p>
 </div>
 </div>
-<div id="outline-container-orgeeaa66b" class="outline-2">
-<h2 id="orgeeaa66b">Reflection</h2>
-<div class="outline-text-2" id="text-orgeeaa66b">
+<div id="outline-container-org2f404a7" class="outline-2">
+<h2 id="org2f404a7">Reflection</h2>
+<div class="outline-text-2" id="text-org2f404a7">
 <p>
 Overall, this was a really helful project. By working on this board, I learned several
 electrical engineering fundamentals, including:

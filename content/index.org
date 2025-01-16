@@ -27,7 +27,8 @@ Minor in Korean Language (Fall 2024)
 * About Me
 I am a second-year Computer Engineering major with concentrations in Computing Hardware and Robotics. I chose this
 field of study because I wanted to learn how computers work on a fundamental level and develop programming
-skills with concrete applications.
+skills with concrete applications. I take pride in the quality of the work I produce, and I love working
+alongside others who feel the same way.
 
 One of these physical applications is with Hytech Racing, Georgia Tech's Electric FSAE team.
 Over the past few semesters, I have learned electric engineering fundamentals and contributed
@@ -37,12 +38,6 @@ firmware for this year's car.
 
 In my free time, I like to play intramural sports, sing in Georgia Tech Chamber Choir, run,
 and attend meetings for a campus ministry (Reformed University Fellowship).
-
-I strive to develop both technical and communication skills in professional engineering
-environments. I actively seek situations where I am the least experienced. I believe that
-my detail-orientedness, discipline, and curiosity will allow me to make meaningful
-contributions to any engineering team.
-
 
 \\
 \\
@@ -61,11 +56,10 @@ In the next few years, I hope to graduate with a Master's degree in Electrical a
 Engineering and work full-time.
 
 I plan to stay involved in Hytech Racing over the next few years to gain practical engineering experience. I have
-found that I really enjoy the fast-paced environment and I'm excited to see what else I
-will learn.
+found that I really enjoy the fast-paced environment and I'm excited to see what else I will learn.
 
 I also hope to get an internship or co-op starting *Spring/Summer 2025*. An internship
-would help me to develop practical skills in a more profesional environment.
+would help me to develop practical skills in a more professional environment.
 
 \\
 \\
@@ -119,6 +113,21 @@ plates to to verify their thermal properties. /[[./thermistorBoard/thermistorBoa
 
 
 * Relevant Coursework
+
+** Architecture, Systems, Concurrency, and Energy in Computation (Spring 2025)
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 3058)
+#+begin_quote
+Basic organizational principles of the major components of a processor - The core, memory,
+hierarchy, I/O subsystem, and basic operating system constraints that utilize them.
+#+end_quote
+
+** Signal Processing (Spring 2025)
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2026)
+#+begin_quote
+Introduction to discrete-time and continuous-time signals. Filtering. Frequency response.
+Fourier Transform. Z transform. Laboratory emphasizes computer-based signal processing.
+#+end_quote
+
 ** Programming for Hardware and Software Systems (Fall 2024)
 From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2035):
 #+begin_quote
@@ -162,10 +171,6 @@ From the [[https://catalog.gatech.edu/courses-undergrad/phys][course catalog]] (
 A calculus-based course with laboratory covering electromagnetism, applications of
 electromagnetism, light, and modern physics.
 #+end_quote
-
-\\
-\\
-\\
 
 ** Digital Systems & Design (Fall 2023)
 From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2020):

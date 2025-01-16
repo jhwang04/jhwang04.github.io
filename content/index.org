@@ -64,7 +64,12 @@ would help me to develop practical skills in a more professional environment.
 \\
 \\
 \\
-* Technical Projects
+* Projects
+** Laser cut nameplates /(Fall 2024)/
+When living on-campus, RAs usually print nameplates for every apartment door. These always annoyed
+me slightly, so I decided to use the laser cutters at one of GT's makerspaces to make my own.
+
+[[./assets/nameplates.png]]
 
 ** Minecraft Redstone Computer /(Fall 2024)/
 In my Digital Design classes, I constantly thought /hmm, I could make this in Minecraft/. Growing

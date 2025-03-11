@@ -58,13 +58,14 @@ Engineering and work full-time.
 I plan to stay involved in Hytech Racing over the next few years to gain practical engineering experience. I have
 found that I really enjoy the fast-paced environment and I'm excited to see what else I will learn.
 
-I also hope to get an internship or co-op starting *Spring/Summer 2025*. An internship
-would help me to develop practical skills in a more professional environment.
+I also plan on learning as much as I can while working at Tesla this summer and applying those
+skills to other technical projects.
 
 \\
 \\
 \\
 * Projects
+
 ** Laser cut nameplates /(Fall 2024)/
 When living on-campus, RAs usually print nameplates for every apartment door. These always annoyed
 me slightly, so I decided to use the laser cutters at one of GT's makerspaces to make my own.
@@ -80,6 +81,12 @@ computer, starting with the simplest gates and progressing through a fully-funct
 including a 16-bit adder, addressable RAM, a program counter, a logical unit, and a
 4-digit hex display.
 
+** HyTech Racing Training Curriculum /(Fall 2024 - Present)/
+At HyTech Racing, our car becomes more complex every year. As a result, the learning curve for
+new members becomes steeper every year. I wanted to increase two things: the number of actively-contributing
+members, and the contributions of each member. To this end, I designed a guided, asynchronous
+set of training modules that forms a semester-long curriculum. /[[./hytechtraining/hytechtraining.html][(read more)]]/
+
 ** Emacs Org note-taking /(Spring 2024 - Present)/
 During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
 me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is
@@ -88,9 +95,6 @@ and elegantly during class. /[[./noteTaking/noteTaking.html][(read more)]]/
 
 #+attr_html: :width 400px :align center
 [[../assets/noteTaking/notesPage28.png]]
-
-\\
-\\
 
 ** JUnit-style test cases /(Fall 2023 - Spring 2024)/
 In my Object-Oriented Programming (CS 1331) and Data Structures/Algorithsm (CS 1332) classes,
@@ -102,9 +106,6 @@ reached an estimated 4,000+ downloads.* /[[./junits/junits.html][(read more)]]/
 #+attr_html: :width 700px :align center
 [[../assets/driverImage.png]]
 
-\\
-\\
-
 ** Thermistor Board Project (Hytech Racing) /(Fall 2023)/
 For Hytech, we needed an array of thermistors to measure temperature data at many different
 points. Initially, this was designed to measure data in an array between two large aluminum
@@ -112,10 +113,6 @@ plates to to verify their thermal properties. /[[./thermistorBoard/thermistorBoa
 
 #+attr_html: :width 400px :align center
 [[../assets/thermistor_board/Thermistor_Board_multiplexer_layout.png]]
-
-\\
-\\
-
 
 * Relevant Coursework
 

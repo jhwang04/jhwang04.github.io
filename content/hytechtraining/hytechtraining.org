@@ -54,3 +54,5 @@ When I started using Khanacademy in 3rd grade to learn math, they had a feature 
 the "knowledge map".
 
 [[../assets/hytechtraining/knowledgemap.jpg]]
+
+<blog in progress, will complete later>

@@ -87,6 +87,9 @@ new members becomes steeper every year. I wanted to increase two things: the num
 members, and the contributions of each member. To this end, I designed a guided, asynchronous
 set of training modules that forms a semester-long curriculum. /[[./hytechtraining/hytechtraining.html][(read more)]]/
 
+#+attr_html: :width 400px :align center
+[[../assets/hytechtraining/keychain.png]]
+
 ** Emacs Org note-taking /(Spring 2024 - Present)/
 During CS classes, I take notes using a combination of Emacs Org-mode and LaTeX. This allows
 me to take notes in a markdown-like environment, but compile it into clean PDFs. Emacs is

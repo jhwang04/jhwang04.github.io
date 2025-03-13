@@ -1,6 +1,10 @@
 #+TITLE: HyTech Racing Electrical Training Curriculum
 #+AUTHOR: Justin Hwang
 
+#+latex_header_extra: \usepackage[labelsep=none,labelfont=bf]{caption}
+#+latex_header_extra: \renewcommand{\figurename}{\textbf{Figure}}
+#+latex_header_extra: \renewcommand{\thefigure}{\textbf{\arabic{figure}. }}
+
 #+BEGIN_COMMENT
 #+SETUPFILE: https://fniessen.github.io//org-html-themes/org/theme-readtheorg.setup
 #+END_COMMENT
@@ -53,6 +57,54 @@ give members the opportunity to ask questions and make sure they're on the right
 When I started using Khanacademy in 3rd grade to learn math, they had a feature called
 the "knowledge map".
 
+#+caption: Screencapture of KhanAcademy's knowledge map from the early 2010s.
 [[../assets/hytechtraining/knowledgemap.jpg]]
 
-<blog in progress, will complete later>
+I always found this feature super interesting because it clearly showed what skills
+depended on each other as a prerequisite.
+
+#+attr_html: :width 500px :align center
+#+caption: Screencapture of HyTech's "knowledge map" indicating which modules are prerequisites for others.
+[[../assets/hytechtraining/training_map.jpg]]
+
+After identifying the essential skills, culminating in a small board design project
+(a.k.a Keychain Project), I drew this map. Some of the earlier modules take only an
+hour or two to complete, but some of the later ones could take a few weeks. The most
+important thing, though, was that the expectations were clear. When students joined
+the team, instead of being stonewalled by a huge amount of required prerequisite
+knowledge, they could see what topics they must study to be onboarded ASAP.
+
+Then, after defining the learning targets of each module (maybe my grade school
+teachers were onto something), all we had to do was write the content. I wrote
+several of the modules myself, but I had significant help for the electronics crash
+course, Altium training, and the Keychain project.
+
+Here are a few screenshots from the curriculum:
+
+#+attr_html: :width 500px :align center
+#+caption: From Module 3 - Electronics Crash Course. Showing Inverting and Non-Inverting amplifier configurations with their ideal equa
+[[../assets/hytechtraining/op_amps.png]]
+
+#+attr_html: :width 500px :align center
+#+caption: From Module 3 - Intro to Firmware. Written directions explaining how to compile code in PlaformIO environment.
+[[../assets/hytechtraining/module4.png]]
+
+#+attr_html: :width 500px :align center
+#+caption: From Module 6 - Keychain Project. Showing 3D view of board-in-progress with through-hole components.
+[[../assets/hytechtraining/keychain.png]]
+
+In total, there are over *100 pages of written content* for new members to study. There's
+definitely room for the scope of the content to expand, but we would just need to
+write more advanced modules and append them to the end of the knowledge map. As it
+currently stands, first-years can study a clearly-defined set of skills and begin
+contributing to the team in meaningful ways.
+
+* Outcome
+The number of super-productive freshman is incredibly high. There are 7-8 freshman
+in firmware alone who are actively completing assignments and submitting pull requests.
+In comparison, there were only around 5 freshman in the entire electrical/firmware subteams
+one year ago. There are also a few new members who have already spent more time designing and routing
+PCBs than I have. I'm super proud of these students and super optimistic about next
+year's electrical team. I can't take much credit for their success, since they are
+all highly-motivated and super smart, but I'd like to think that my training curriculum
+played a role in their involvement with the club.

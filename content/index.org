@@ -17,24 +17,27 @@
 
 [[./assets/portrait.jpg]]
 
-B.S. in Computer Engineering (Spring 2027) \\
-Concentrations in Computing Hardware and Robotics \\
+B.S. in Computer Engineering (Fall 2026) \\
+Concentrations in Computing Hardware and System Architecture \\
 Minor in Korean Language (Fall 2024)
 
 \\
 \\
 \\
 * About Me
-I am a second-year Computer Engineering major with concentrations in Computing Hardware and Robotics. I chose this
+I am a third-year Computer Engineering major with concentrations in Computing Hardware and System Architecture. I chose this
 field of study because I wanted to learn how computers work on a fundamental level and develop programming
 skills with concrete applications. I take pride in the quality of the work I produce, and I love working
 alongside others who feel the same way.
 
 One of these physical applications is with Hytech Racing, Georgia Tech's Electric FSAE team.
-Over the past few semesters, I have learned electric engineering fundamentals and contributed
-to a revamped firmware system. For the 2024-25 school year, I am Hytech's Low Voltage Electronics
-lead. I am responsible for all LV board design, fabrication, and wire harnessing, as well as all
-firmware for this year's car.
+For the 2024-25 school year, I was Hytech's Low Voltage Electronics lead, which meant I was responsible for all
+LV board design, fabrication, and firmware for the 2025 competition vehicle (HT09). We placed
+third overall (out of nearly 100 teams!), including 2nd in the Design event and 1st in Acceleration.
+
+This year, I will be the President of the organization. I'm working with all of the leads to
+turn HyTech into an institutionally-sucessful team that can perform well year-after-year, even
+though individual students may graduate.
 
 In my free time, I like to play intramural sports, sing in Georgia Tech Chamber Choir, run,
 and attend meetings for a campus ministry (Reformed University Fellowship).
@@ -55,16 +58,23 @@ and attend meetings for a campus ministry (Reformed University Fellowship).
 In the next few years, I hope to graduate with a Master's degree in Electrical and Computer
 Engineering and work full-time.
 
-I plan to stay involved in Hytech Racing over the next few years to gain practical engineering experience. I have
-found that I really enjoy the fast-paced environment and I'm excited to see what else I will learn.
-
 I also plan on learning as much as I can while working at Tesla this summer and applying those
 skills to other technical projects.
+
+Ultimately, I would like to apply my skills in both hardware and software by designing
+processors.
 
 \\
 \\
 \\
 * Projects
+
+** Contributing to Open-Source RISC-V Processor /(Summer 2025)/
+Last spring, while talking to an FPGA engineer at a quant firm, she recommended that I
+work on an open-source processor to gain digital design experience. In particular, adding
+some sort of branch-prediction algorithm would be very effective. I found Darkriscv,
+an existing open-source RISC-V processor with a 3-stage pipeline and added a simple 1-bit
+branch predictor, which improved overall CPI by 13% (and branch CPI by 49%!).
 
 ** Laser cut nameplates /(Fall 2024)/
 When living on-campus, RAs usually print nameplates for every apartment door. These always annoyed

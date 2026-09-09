@@ -24,21 +24,763 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org299025f">&lt; Back Home</a></li>
-<li><a href="#orgeeaf15a">Overview</a></li>
+<li><a href="#org6e00d31">&lt; Back Home</a></li>
+<li><a href="#org30ce7b1">Solution</a>
+<ul>
+<li><a href="#org54ebda6">Waveform Proof</a></li>
+</ul>
+</li>
+<li><a href="#orgb87cb3f">Process</a>
+<ul>
+<li><a href="#org76a2ac4">Initial Investigation</a></li>
+<li><a href="#org8a5016d">Creating Netlist</a></li>
+<li><a href="#orgf470802">Analyzing Netlist</a></li>
+</ul>
+</li>
+<li><a href="#orgef1870a">Easter Eggs</a>
+<ul>
+<li><a href="#orgadd8d06">Easter Egg 1 - per arenam ad astra</a></li>
+<li><a href="#org11b9fb7">Easter Egg 2 - The night sky awaits</a></li>
+<li><a href="#org6e9307a">Easter Egg 3 - Puzzle outputs</a></li>
+</ul>
+</li>
+<li><a href="#orge5ffec0">Failed Attempt: GUI tool</a></li>
+<li><a href="#orgb421ab6">Closing Statements</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org299025f" class="outline-2">
-<h2 id="org299025f"><a href="../index.html">&lt; Back Home</a></h2>
+<div id="outline-container-org6e00d31" class="outline-2">
+<h2 id="org6e00d31"><a href="../index.html">&lt; Back Home</a></h2>
 </div>
 
-<div id="outline-container-orgeeaf15a" class="outline-2">
-<h2 id="orgeeaf15a">Overview</h2>
-<div class="outline-text-2" id="text-orgeeaf15a">
+<div id="outline-container-org30ce7b1" class="outline-2">
+<h2 id="org30ce7b1">Solution</h2>
+<div class="outline-text-2" id="text-org30ce7b1">
 <p>
-Bald
+The following sequence will drive the <code>success</code> pin high.
 </p>
+
+<ol class="org-ol">
+<li>Drive <code>rst_n</code> high.</li>
+<li>Drive <code>enable</code> high.</li>
+<li>Each clock cycle, drive <code>I</code> high/low according to the sequence below.</li>
+</ol>
+
+<p>
+When <code>enable</code> goes low, the output pin <code>success</code> will be driven high, and the
+output vector <code>O[7:0]</code> will output <code>(* TWO STARS *)</code> in ASCII form.
+</p>
+
+<p>
+<b>Input Sequence:</b>
+</p>
+
+<pre class="example" id="org3fe3d35">
+0 0 0 0 0 0 0 1 0 1 0
+1 0 0 0 0 1 0 0 0 0 0
+0 0 0 0 0 0 0 1 0 1 0
+1 0 1 0 0 0 0 0 0 0 0
+0 0 0 0 1 0 1 0 0 0 0
+0 0 1 0 0 0 0 0 1 0 0
+0 0 0 0 1 0 0 0 0 0 1
+0 1 0 0 0 0 1 0 0 0 0
+0 0 0 1 0 0 0 0 0 0 1
+0 0 0 0 0 1 0 0 1 0 0
+0 1 0 1 0 0 0 0 0 0 0
+</pre>
+</div>
+<div id="outline-container-org54ebda6" class="outline-3">
+<h3 id="org54ebda6">Waveform Proof</h3>
+<div class="outline-text-3" id="text-org54ebda6">
+
+<div id="orgb2d339d" class="figure">
+<p><img src="../assets/asic-challenge/output_waveform.png" alt="output_waveform.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Waveform capture (from Surfer) showing the full input sequence that makes the "success" pin go high.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb87cb3f" class="outline-2">
+<h2 id="orgb87cb3f">Process</h2>
+<div class="outline-text-2" id="text-orgb87cb3f">
+<p>
+Section I only shows <i>what</i> sequence solves the puzzle. This section highlights
+<i>how</i> I found the solution. I tried many other things that took me down some rabbit holes.
+If I tried to include them all here, the document would be&#x2026; way too long.
+</p>
+</div>
+<div id="outline-container-org76a2ac4" class="outline-3">
+<h3 id="org76a2ac4">Initial Investigation</h3>
+<div class="outline-text-3" id="text-org76a2ac4">
+<p>
+I started by loading the gds file into both <a href="https://gds-viewer.tinytapeout.com/">Tiny Tapeout</a>
+and KLayout, as recommended in the README.
+</p>
+
+
+<div id="org9ffe25a" class="figure">
+<p><img src="../assets/asic-challenge/tinytapeout.png" alt="tinytapeout.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Screenshot from Tiny Tapeout's GDS viewer, showing the 3D structure of the puzzle ASIC.</p>
+</div>
+
+<p>
+While exploring the GDS viewer, I noticed the "cells/instances" sidebar on the right side. Knowing
+that ASICs tend to be made up of well-defined standard cells, I
+realized that the GDS file included more information than just the physical layer geometry.
+</p>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+<b>Finding:</b> The puzzle uses the sky130 standard cell library!
+</p>
+</blockquote>
+
+<p>
+Then, I found an open-source Python package called GDSAST which (as you might expect) turns a GDS file
+into an abstract syntax tree (AST). I exported this tree as a JSON, which has the following structure.
+</p>
+
+<p>
+The most important thing to notice is that there is a list of <i>structures</i> that define each
+sky130 standard cell and its physical layout. The physical layout consists of polygons and paths, each existing
+on their respective layers. The second thing to note is that the final item in the "structures" array
+is simply called "puzzle". This structure is not like any of the others. Instead of containing <i>only</i>
+the geometry of polygons, this also contains many "sref" items, which are an
+<i>instance of a previously-defined standard cell</i>. In essence, most structures in the list are only
+defining standard cells, which are subsequently placed (and rotated/reflected) in the puzzle.
+</p>
+
+<pre class="example" id="org2a04be4">
+Simplified AST from puzzle.gds
+
+root
+- structures
+  - and2 standard cell
+    - polygon (layer, datatype, x, y, width, height)
+    - path (all x-y coordinates this path touches)
+    - polygon (layer, datatype, x, y, width, height)
+    - &lt;more polygons/paths&gt;
+  - xor2 standard cell
+    - polygon (layer, datatype, x, y, width, height)
+    - path (all x-y coordinates this path touches)
+    - &lt;more polygons/paths&gt;
+  - &lt;more standard cells&gt;
+  - puzzle
+    - sref
+      - standard cell type (e.g. and2)
+      - x, y, rotation, reflection
+    - sref
+      - standard cell type (e.g. or3)
+      - x, y, rotation, reflection
+    - polygon (layer, datatype, x, y, width, height)
+    - ...
+
+(NOTE: This is SIMPLIFIED for clarity. I recommend parsing puzzle.gds
+yourself to see the structure of the GDS file!)
+</pre>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+<b>Finding:</b> The GDS file defines the geometry of all the standard cells, then places many
+instances of them to create the overall puzzle.
+</p>
+</blockquote>
+
+<p>
+Since the standard cells are (of course) standardized, I looked up the GDS layers
+of the sky130 library online and pulled out the layers I saw in the JSON file.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Layer Number</th>
+<th scope="col" class="org-right">Datatype</th>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">67</td>
+<td class="org-right">20</td>
+<td class="org-left">licon</td>
+<td class="org-left">Local Interconnect (yellow on GDS file)</td>
+</tr>
+
+<tr>
+<td class="org-right">67</td>
+<td class="org-right">44</td>
+<td class="org-left">mcon</td>
+<td class="org-left">Connection from licon to metal1</td>
+</tr>
+
+<tr>
+<td class="org-right">68</td>
+<td class="org-right">20</td>
+<td class="org-left">metal 1</td>
+<td class="org-left">First layer of metal (blue on GDS file)</td>
+</tr>
+
+<tr>
+<td class="org-right">68</td>
+<td class="org-right">44</td>
+<td class="org-left">via</td>
+<td class="org-left">Connection from metal 1 to metal 2</td>
+</tr>
+
+<tr>
+<td class="org-right">69</td>
+<td class="org-right">20</td>
+<td class="org-left">metal 2</td>
+<td class="org-left">Second layer of metal (lightest blue on GDS file)</td>
+</tr>
+
+<tr>
+<td class="org-right">&#x2026;</td>
+<td class="org-right">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+<b>Summary:</b> So, just to summarize what I learned so far:
+</p>
+<ol class="org-ol">
+<li>The GDS file can be parsed into a list of standard cells with known logical functions.</li>
+<li>All logical cells are from the sky130 library (specifically, the foundry-supplied high-density variant).</li>
+<li>The puzzle places many instances of these standard cells and connects them together to form the ASIC.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org8a5016d" class="outline-3">
+<h3 id="org8a5016d">Creating Netlist</h3>
+<div class="outline-text-3" id="text-org8a5016d">
+<p>
+The next challenge was turning these geometries into a simulatable netlist. I started by writing a Python
+script that would iterate through each standard cell in the structures list and render its geometry using
+matplotlib. Each layer was designated a respective color.
+</p>
+
+
+<div id="org8689bf5" class="figure">
+<p><img src="../assets/asic-challenge/mux2nand2.png" alt="mux2nand2.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Matplotlib renders of a 2x1 MUX (left) and a NAND2 gate (right).</p>
+</div>
+
+
+
+
+<div id="orgeadf68a" class="figure">
+<p><img src="../assets/asic-challenge/dfxtp.png" alt="dfxtp.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>D-FlipFlop standard cell render, which goes up to the Metal 1 layer.</p>
+</div>
+
+<p>
+From these renders (and from finding several placements in Tiny Tapeout), I realized that although the logic
+was well-defined, the <i>specific point of connection</i> to a higher layer was not consistent from one
+cell to the next. For instance, one instance of a NAND2 cell might have a via connecting to the top of the
+leftmost licon polygon (yellow), while another instance might be connected near the bottom. Therefore, although
+I knew that the instance was <i>supposed</i> to be a NAND2 gate, I could not be certain which connections
+served which logical purpose.
+</p>
+
+<p>
+So, to solve this problem, I wrote another Python script to scrape each standard cell's geometry, cross-check
+it against the logical purpose defined in the sky130 library, and assign each polygon to a net. In this render,
+each net has its own color, not the layer. I then used geometry with respect to the nwell/pwell regions forming
+the pull-up and pull-down networks to ensure the extracted nets were logically correct.
+</p>
+
+<p>
+<img src="../assets/asic-challenge/mux2_net.png" alt="mux2_net.png" /> <img src="../assets/asic-challenge/nand2_net.png" alt="nand2_net.png" />
+</p>
+
+<p>
+At this point, I could take each standard cell instance in <code>puzzle</code>, take each pin from that
+cell (<code>A</code>, <code>B</code>, <code>clk</code>, etc.), and attach a set of polygons that belong to that pin. Since
+the <code>puzzle</code> structure also includes polygons/paths connecting the standard cells to each other,
+I could determine which cells are connected to each other.
+</p>
+
+<p>
+For instance, if the first OR2's output pin <code>X</code> is connected to another gate's second input pin <code>B</code>
+I could combine each pin's set of polygons into a larger net. By iteratively repeating this process,
+I created a list of standard cell instances, a list of nets, and which instance/pin pairs connected
+to each net.
+</p>
+
+<pre class="example" id="orgd1f3d0b">
+AST from netlist extraction
+
+netlist
+- net1
+  - nand2_instance1.Y
+  - dfxtp_instance9.Q
+- net2
+  - and3o11_instance4.Y
+  - xor3_instance28.X
+  - ...
+- &lt;more nets&gt;
+</pre>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+<b>Note:</b> I verified the <i>correctness</i> of this combined netlist with two steps. First, I categorized
+each pin of each standard cell as an input or an output using the sky130 library. Then,
+I iterated through the final netlist to ensure <b>each net had exactly one driver</b>.
+</p>
+</blockquote>
+
+<p>
+From here, I could simply trim out the <code>VPWR/VGND</code> pins,
+remove all the non-logical pins (like decoupling capacitors,
+diodes), and export this AST into a synthesizable verilog file.
+</p>
+
+<p>
+I took the given <code>example_inputs.vcd</code> file and parsed it into a verilog testbench file that would write
+the input pins high/low at each clock cycle. Then, I just attached the testbench to an instance of the <code>puzzle</code>
+module to read the outputs.
+</p>
+
+
+<div id="org9b150cc" class="figure">
+<p><img src="../assets/asic-challenge/simulated_out.png" alt="simulated_out.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>Waveform capture from my extracted netlist. This matches <code>example_inputs.vcd</code> exactly.</p>
+</div>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+<b>Summary:</b> Again, to summarize what I figured out so far:
+</p>
+<ol class="org-ol">
+<li>I created a mapping of each logical pin to a set of corresponding polygons in each standard cell.</li>
+<li>I combined these nets at the puzzle-level to determine which cell pins connect to each other.</li>
+<li>I am confident this netlist is valid because every net has exactly one driver.</li>
+<li>I converted this list of instances/pins to a runnable verilog file.</li>
+<li>I simulated this verilog file by writing a testbench. It behaves the same as the given .vcd file.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgf470802" class="outline-3">
+<h3 id="orgf470802">Analyzing Netlist</h3>
+<div class="outline-text-3" id="text-orgf470802">
+<p>
+Since I can clearly separate all of the sequential logic (flip flops) from the combinational logic
+(gates, buffers, diodes), I simply wrote an equation for each flipflop with respect to the other
+flipflops and the input pins.
+</p>
+
+<pre class="example" id="orgea2f333">
+Example Equations:
+
+ff1 = (ff9 AND ff3) OR ff4
+ff2 = ff2 OR (ff1 AND NOT ff32) AND I
+...
+ff92 = ff30 AND (ff49 OR ff20) AND RST_N
+</pre>
+
+<p>
+Since I know which flipflop ultimately drives the "success" pin, I need to solve for which possible
+values of the other 91 flipflops (and the 4 input pins!) would make this pin go high. This is a
+<b>boolean satisfiability problem</b>, which is arguably the most famous NP-complete problem.
+</p>
+
+
+<div id="org0b95eb4" class="figure">
+<p><img src="../assets/asic-challenge/combinational_logic_2.png" alt="combinational_logic_2.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>Block diagram of the combinational logic feeding "success".</p>
+</div>
+
+<p>
+However, the boolean satisfiability problem has no concept of time. So, I "unrolled" this
+circuit in time to make a variable per flipflop <i>per clock cycle</i>. Then, I had
+a python script make an equation for the output "success" with respect to the input pins (input, reset, enable) at
+each point in time.
+</p>
+
+
+<div id="org865c94b" class="figure">
+<p><img src="../assets/asic-challenge/unrolled_fixed.png" alt="unrolled_fixed.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>Block diagram of unrolled boolean circuit feeding "success".</p>
+</div>
+
+<p>
+Now, I just need to find a valid combination of <code>I_0</code>, <code>I_1</code>, &#x2026;, <code>I_N</code> that will make
+the success pin go high. By iteratively generating an expression and then testing it with
+a SAT solver for progressively more clock cycles, I could prove that there is no way to make
+<code>success</code> go high in fewer than 121 steps.
+</p>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+<b>Summary:</b> So, to summarize this section,
+</p>
+<ol class="org-ol">
+<li>I derived equations for each flipflop with respect to the other flipflops and the top-level inputs.</li>
+<li>I "unrolled" these equations in time to make a giant boolean expression for "success" with
+respect to <code>I</code> at each point in time.</li>
+<li>I plugged this equation into a SAT solver to find satisfying values for <code>I</code> at each point in time.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="outline-container-orgef1870a" class="outline-2">
+<h2 id="orgef1870a">Easter Eggs</h2>
+<div class="outline-text-2" id="text-orgef1870a">
+<p>
+Here are the miscellaneous things I noticed along the way. Noticeably, this whole puzzle had a "starry sky"
+theme, with several easter eggs relating to the theme. This isn't even counting the standard cell library,
+which is named "sky130".
+</p>
+</div>
+<div id="outline-container-orgadd8d06" class="outline-3">
+<h3 id="orgadd8d06">Easter Egg 1 - per arenam ad astra</h3>
+<div class="outline-text-3" id="text-orgadd8d06">
+<p>
+While I was parsing the standard cells to create the netlist, all layer/datatype combinations matched the
+sky130 expectations except for two. There were two cells named <code>INTERNAL_3</code> and <code>INTERNAL_7</code> which each
+consisted of only one polygon on layer 200. Layer 200 is not typically used by any
+standard cell library, so I noticed them while parsing each standard cell.
+</p>
+
+<p>
+When I rendered these placements on the graph, I got a barcode-looking structure:
+</p>
+
+
+<div id="org17ff171" class="figure">
+<p><img src="../assets/asic-challenge/internal_barcode.png" alt="internal_barcode.png" />
+</p>
+<p><span class="figure-number">Figure 8: </span>Rendered instances of <code>INTERNAL_3</code> and <code>INTERNAL_7</code> (thin/wide rects).</p>
+</div>
+
+<p>
+This is a morse code message that translates to <code>per arenam ad astra</code>. This seems like a parody of
+the Roman phrase <code>per aspera ad astra</code>, which means "through hardships to the stars".
+By swapping <code>aspera</code> with <code>arenam</code> (which means "sand"), the new translation is
+"through sand to the stars".
+</p>
+
+<p>
+Sand is made of silicon.
+</p>
+</div>
+</div>
+<div id="outline-container-org11b9fb7" class="outline-3">
+<h3 id="org11b9fb7">Easter Egg 2 - The night sky awaits</h3>
+<div class="outline-text-3" id="text-org11b9fb7">
+<p>
+The given <code>example_inputs.vcd</code> file has two random-looking input patterns that are each 121 bits long. However,
+when breaking this into 11 groups of 11, we can trim the leading/trailing zeroes to get the following bytes:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right"><b>Binary</b></th>
+<th scope="col" class="org-left"><b>ASCII</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">01010100</td>
+<td class="org-left">T</td>
+</tr>
+
+<tr>
+<td class="org-right">01101000</td>
+<td class="org-left">h</td>
+</tr>
+
+<tr>
+<td class="org-right">01100101</td>
+<td class="org-left">e</td>
+</tr>
+
+<tr>
+<td class="org-right">00100000</td>
+<td class="org-left">[space]</td>
+</tr>
+
+<tr>
+<td class="org-right">01101110</td>
+<td class="org-left">n</td>
+</tr>
+
+<tr>
+<td class="org-right">01101001</td>
+<td class="org-left">i</td>
+</tr>
+
+<tr>
+<td class="org-right">01100111</td>
+<td class="org-left">g</td>
+</tr>
+
+<tr>
+<td class="org-right">01101000</td>
+<td class="org-left">h</td>
+</tr>
+
+<tr>
+<td class="org-right">01110100</td>
+<td class="org-left">t</td>
+</tr>
+
+<tr>
+<td class="org-right">00100000</td>
+<td class="org-left">[space]</td>
+</tr>
+
+<tr>
+<td class="org-right">01110011</td>
+<td class="org-left">s</td>
+</tr>
+
+<tr>
+<td class="org-right">01101011</td>
+<td class="org-left">k</td>
+</tr>
+
+<tr>
+<td class="org-right">01111001</td>
+<td class="org-left">y</td>
+</tr>
+
+<tr>
+<td class="org-right">00100000</td>
+<td class="org-left">[space]</td>
+</tr>
+
+<tr>
+<td class="org-right">01100001</td>
+<td class="org-left">a</td>
+</tr>
+
+<tr>
+<td class="org-right">01110111</td>
+<td class="org-left">w</td>
+</tr>
+
+<tr>
+<td class="org-right">01100001</td>
+<td class="org-left">a</td>
+</tr>
+
+<tr>
+<td class="org-right">01101001</td>
+<td class="org-left">i</td>
+</tr>
+
+<tr>
+<td class="org-right">01110100</td>
+<td class="org-left">t</td>
+</tr>
+
+<tr>
+<td class="org-right">01110011</td>
+<td class="org-left">s</td>
+</tr>
+
+<tr>
+<td class="org-right">00100000</td>
+<td class="org-left">[space]</td>
+</tr>
+
+<tr>
+<td class="org-right">00100000</td>
+<td class="org-left">[space]</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Their given example was "The night sky awaits  ".
+</p>
+</div>
+</div>
+<div id="outline-container-org6e9307a" class="outline-3">
+<h3 id="org6e9307a">Easter Egg 3 - Puzzle outputs</h3>
+<div class="outline-text-3" id="text-org6e9307a">
+<p>
+When the <code>success</code> pin goes high, the output prints <code>(* TWO STARS *)</code> in ASCII, sticking with
+the "sky" theme. However, this is not the only output!
+</p>
+
+<p>
+When you enter 121 zeroes (<code>I</code> never goes high), you get <code>EMPTY SKY</code>.
+</p>
+
+<p>
+When you enter 121 ones (<code>I</code> never goes low), you get <code>BIG BANG</code>.
+</p>
+
+<p>
+If you draw the zeroes and ones of the solution as spaces and stars, it looks like this:
+</p>
+
+<pre class="example" id="org3987481">
+_ _ _ _ _ _ _ * _ * _
+* _ _ _ _ * _ _ _ _ _
+_ _ _ _ _ _ _ * _ * _
+* _ * _ _ _ _ _ _ _ _
+_ _ _ _ * _ * _ _ _ _
+_ _ * _ _ _ _ _ * _ _
+_ _ _ _ * _ _ _ _ _ *
+_ * _ _ _ _ * _ _ _ _
+_ _ _ * _ _ _ _ _ _ *
+_ _ _ _ _ * _ _ * _ _
+_ * _ * _ _ _ _ _ _ _
+</pre>
+
+<p>
+Notably, every row and every column has <i>exactly two stars</i>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge5ffec0" class="outline-2">
+<h2 id="orge5ffec0">Failed Attempt: GUI tool</h2>
+<div class="outline-text-2" id="text-orge5ffec0">
+<p>
+Although the SAT solver works very nicely, it was NOT my first attempt. I actually spent about two weeks
+trying to get this GUI tool to work, but it ultimately did not get me to the puzzle solution.
+</p>
+
+<p>
+I wanted to create a generic tool to reverse-engineer any ASIC, not just this specific example. As such,
+I wanted the reverse-engineering of the chip's functionality to work for any inputs and any function.
+</p>
+
+<p>
+This would, of course, take some human input. Therefore, I wanted to create a GUI tool that could help
+a human to visually sort through the logic, group modules together, and build up the hierarchical structure.
+</p>
+
+
+<div id="org73c7776" class="figure">
+<p><img src="../assets/asic-challenge/visualizer_demo.png" alt="visualizer_demo.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 9: </span>Screenshot from the visualizer GUI. Each cell could be highlighted/moved.</p>
+</div>
+
+
+<div id="org61f8df4" class="figure">
+<p><img src="../assets/asic-challenge/visualizer_chaos.png" alt="visualizer_chaos.png" width="500px" />
+</p>
+<p><span class="figure-number">Figure 10: </span>Screenshot of a large-fanout D-FlipFlop in the visualizer tool.</p>
+</div>
+
+<p>
+Since many pins were extremely high-fanout, I added the ability to hide the line and just label
+each connection with text.
+</p>
+
+
+<div id="org57cb3f0" class="figure">
+<p><img src="../assets/asic-challenge/beforeafterlabel.png" alt="beforeafterlabel.png" />
+</p>
+<p><span class="figure-number">Figure 11: </span>Before/After comparison of net-labeling feature.</p>
+</div>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+<b>Note:</b> The above is not the most clear example of the net-labeling feature. It is most useful with fanouts of 10+.
+</p>
+</blockquote>
+
+<p>
+Using this tool, I started to untangle the mess, visually see the highest-fanout (highest-impact!) flipflops,
+and start to organize the standard cells into logical modules.
+</p>
+
+<p>
+After over twenty hours, spread out over multiple weeks, I had to bite the bullet and switch back to the
+SAT-solver approach.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb421ab6" class="outline-2">
+<h2 id="orgb421ab6">Closing Statements</h2>
+<div class="outline-text-2" id="text-orgb421ab6">
+<p>
+I want to give a huge thank you to the hardware team at Jane Street. I've spent almost all of my free time
+thinking about this puzzle, trying different approaches, and learning more about the whole ASIC development
+pipeline. I generally tried to minimize my AI usage by narrowly defining the scope of any task I asked it
+to do. My goal was (and still is!) to learn as much as possible, and I didn't want to shortcut that by
+outsourcing too much of my thinking.
+</p>
+
+<p>
+This has genuinely been an incredibly rewarding, fun, and valuable experience.
+</p>
+
+<div class="org-center">
+<p>
+<i>gratias ago silici</i>
+</p>
+</div>
 </div>
 </div>
 </div>

@@ -8,8 +8,7 @@
 {{{disable-search}}}
 
 # INSTRUCTIONS FOR USE:
-# https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
-#
+# https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site
 # 1) Open a shell and run ./build.sh in the jhwang04.github.io directory to build the site
 # 2) Run M-x httpd-serve-directory in the docs directory to start a local preview instance
 # 3) Open localhost:8080 to preview the site
@@ -25,22 +24,13 @@ Minor in Korean Language (Fall 2024)
 \\
 \\
 * About Me
-I am a third-year Computer Engineering major with concentrations in Computing Hardware and System Architecture. I chose this
+I am a fourth-year Computer Engineering major with concentrations in Computing Hardware and System Architecture. I chose this
 field of study because I wanted to learn how computers work on a fundamental level and develop programming
 skills with concrete applications. I take pride in the quality of the work I produce, and I love working
 alongside others who feel the same way.
 
-One of these physical applications is with Hytech Racing, Georgia Tech's Electric FSAE team.
-For the 2024-25 school year, I was Hytech's Low Voltage Electronics lead, which meant I was responsible for all
-LV board design, fabrication, and firmware for the 2025 competition vehicle (HT09). We placed
-third overall (out of nearly 100 teams!), including 2nd in the Design event and 1st in Acceleration.
-
-This year, I will be the President of the organization. I'm working with all of the leads to
-turn HyTech into an institutionally-sucessful team that can perform well year-after-year, even
-though individual students may graduate.
-
 In my free time, I like to play intramural sports, sing in Georgia Tech Chamber Choir, run,
-and attend meetings for a campus ministry (Reformed University Fellowship).
+and attend meetings for RUF (a campus ministry).
 
 \\
 \\
@@ -58,7 +48,7 @@ and attend meetings for a campus ministry (Reformed University Fellowship).
 In the next few years, I hope to graduate with a Master's degree in Electrical and Computer
 Engineering and work full-time.
 
-I also plan on learning as much as I can while working at Tesla this summer and applying those
+I also plan on learning as much as I can while interning at Tesla and SpaceX and applying those
 skills to other technical projects.
 
 Ultimately, I would like to apply my skills in both hardware and software by designing
@@ -68,6 +58,13 @@ processors.
 \\
 \\
 * Projects
+
+** Solving Jane Street's ASIC Challenge
+In August 2026, Jane Street posted a challenge on their [[https://blog.janestreet.com/can-you-reverse-engineer-an-asic/][blog]] about reverse-engineering
+an ASIC. I spent ~30 hours over the course of the month trying to solve this puzzle.
+Here's a write-up of how I did it! /[[./asic-challenge/asic-challenge.html][(read more)]]/
+
+[[./assets/asic-challenge/tinytapeout.png]]
 
 ** Contributing to Open-Source RISC-V Processor /(Summer 2025)/
 Last spring, while talking to an FPGA engineer at a quant firm, she recommended that I

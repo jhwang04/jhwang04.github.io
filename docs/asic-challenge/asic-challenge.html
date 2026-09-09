@@ -24,38 +24,38 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6e00d31">&lt; Back Home</a></li>
-<li><a href="#org30ce7b1">Solution</a>
+<li><a href="#org50cba47">&lt; Back Home</a></li>
+<li><a href="#orgec485f3">Solution</a>
 <ul>
-<li><a href="#org54ebda6">Waveform Proof</a></li>
+<li><a href="#org600f81f">Waveform Proof</a></li>
 </ul>
 </li>
-<li><a href="#orgb87cb3f">Process</a>
+<li><a href="#org84963e5">Process</a>
 <ul>
-<li><a href="#org76a2ac4">Initial Investigation</a></li>
-<li><a href="#org8a5016d">Creating Netlist</a></li>
-<li><a href="#orgf470802">Analyzing Netlist</a></li>
+<li><a href="#orge40f831">Initial Investigation</a></li>
+<li><a href="#org525d263">Creating Netlist</a></li>
+<li><a href="#org087fd1d">Analyzing Netlist</a></li>
 </ul>
 </li>
-<li><a href="#orgef1870a">Easter Eggs</a>
+<li><a href="#org9ec6351">Easter Eggs</a>
 <ul>
-<li><a href="#orgadd8d06">Easter Egg 1 - per arenam ad astra</a></li>
-<li><a href="#org11b9fb7">Easter Egg 2 - The night sky awaits</a></li>
-<li><a href="#org6e9307a">Easter Egg 3 - Puzzle outputs</a></li>
+<li><a href="#org5173307">Easter Egg 1 - per arenam ad astra</a></li>
+<li><a href="#orgff5f487">Easter Egg 2 - The night sky awaits</a></li>
+<li><a href="#org8b99740">Easter Egg 3 - Puzzle outputs</a></li>
 </ul>
 </li>
-<li><a href="#orge5ffec0">Failed Attempt: GUI tool</a></li>
-<li><a href="#orgb421ab6">Closing Statements</a></li>
+<li><a href="#orge177a01">Failed Attempt: GUI tool</a></li>
+<li><a href="#org0c4fd56">Closing Statements</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6e00d31" class="outline-2">
-<h2 id="org6e00d31"><a href="../index.html">&lt; Back Home</a></h2>
+<div id="outline-container-org50cba47" class="outline-2">
+<h2 id="org50cba47"><a href="../index.html">&lt; Back Home</a></h2>
 </div>
 
-<div id="outline-container-org30ce7b1" class="outline-2">
-<h2 id="org30ce7b1">Solution</h2>
-<div class="outline-text-2" id="text-org30ce7b1">
+<div id="outline-container-orgec485f3" class="outline-2">
+<h2 id="orgec485f3">Solution</h2>
+<div class="outline-text-2" id="text-orgec485f3">
 <p>
 The following sequence will drive the <code>success</code> pin high.
 </p>
@@ -75,7 +75,7 @@ output vector <code>O[7:0]</code> will output <code>(* TWO STARS *)</code> in AS
 <b>Input Sequence:</b>
 </p>
 
-<pre class="example" id="org3fe3d35">
+<pre class="example" id="org8f2c82d">
 0 0 0 0 0 0 0 1 0 1 0
 1 0 0 0 0 1 0 0 0 0 0
 0 0 0 0 0 0 0 1 0 1 0
@@ -89,11 +89,11 @@ output vector <code>O[7:0]</code> will output <code>(* TWO STARS *)</code> in AS
 0 1 0 1 0 0 0 0 0 0 0
 </pre>
 </div>
-<div id="outline-container-org54ebda6" class="outline-3">
-<h3 id="org54ebda6">Waveform Proof</h3>
-<div class="outline-text-3" id="text-org54ebda6">
+<div id="outline-container-org600f81f" class="outline-3">
+<h3 id="org600f81f">Waveform Proof</h3>
+<div class="outline-text-3" id="text-org600f81f">
 
-<div id="orgb2d339d" class="figure">
+<div id="org8073b6c" class="figure">
 <p><img src="../assets/asic-challenge/output_waveform.png" alt="output_waveform.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Waveform capture (from Surfer) showing the full input sequence that makes the "success" pin go high.</p>
@@ -101,25 +101,25 @@ output vector <code>O[7:0]</code> will output <code>(* TWO STARS *)</code> in AS
 </div>
 </div>
 </div>
-<div id="outline-container-orgb87cb3f" class="outline-2">
-<h2 id="orgb87cb3f">Process</h2>
-<div class="outline-text-2" id="text-orgb87cb3f">
+<div id="outline-container-org84963e5" class="outline-2">
+<h2 id="org84963e5">Process</h2>
+<div class="outline-text-2" id="text-org84963e5">
 <p>
 Section I only shows <i>what</i> sequence solves the puzzle. This section highlights
 <i>how</i> I found the solution. I tried many other things that took me down some rabbit holes.
 If I tried to include them all here, the document would be&#x2026; way too long.
 </p>
 </div>
-<div id="outline-container-org76a2ac4" class="outline-3">
-<h3 id="org76a2ac4">Initial Investigation</h3>
-<div class="outline-text-3" id="text-org76a2ac4">
+<div id="outline-container-orge40f831" class="outline-3">
+<h3 id="orge40f831">Initial Investigation</h3>
+<div class="outline-text-3" id="text-orge40f831">
 <p>
 I started by loading the gds file into both <a href="https://gds-viewer.tinytapeout.com/">Tiny Tapeout</a>
 and KLayout, as recommended in the README.
 </p>
 
 
-<div id="org9ffe25a" class="figure">
+<div id="org2693a37" class="figure">
 <p><img src="../assets/asic-challenge/tinytapeout.png" alt="tinytapeout.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Screenshot from Tiny Tapeout's GDS viewer, showing the 3D structure of the puzzle ASIC.</p>
@@ -156,7 +156,7 @@ the geometry of polygons, this also contains many "sref" items, which are an
 defining standard cells, which are subsequently placed (and rotated/reflected) in the puzzle.
 </p>
 
-<pre class="example" id="org2a04be4">
+<pre class="example" id="org565015d">
 Simplified AST from puzzle.gds
 
 root
@@ -282,9 +282,9 @@ of the sky130 library online and pulled out the layers I saw in the JSON file.
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org8a5016d" class="outline-3">
-<h3 id="org8a5016d">Creating Netlist</h3>
-<div class="outline-text-3" id="text-org8a5016d">
+<div id="outline-container-org525d263" class="outline-3">
+<h3 id="org525d263">Creating Netlist</h3>
+<div class="outline-text-3" id="text-org525d263">
 <p>
 The next challenge was turning these geometries into a simulatable netlist. I started by writing a Python
 script that would iterate through each standard cell in the structures list and render its geometry using
@@ -292,7 +292,7 @@ matplotlib. Each layer was designated a respective color.
 </p>
 
 
-<div id="org8689bf5" class="figure">
+<div id="orgad4655d" class="figure">
 <p><img src="../assets/asic-challenge/mux2nand2.png" alt="mux2nand2.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Matplotlib renders of a 2x1 MUX (left) and a NAND2 gate (right).</p>
@@ -301,7 +301,7 @@ matplotlib. Each layer was designated a respective color.
 
 
 
-<div id="orgeadf68a" class="figure">
+<div id="orgd17c960" class="figure">
 <p><img src="../assets/asic-challenge/dfxtp.png" alt="dfxtp.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>D-FlipFlop standard cell render, which goes up to the Metal 1 layer.</p>
@@ -341,7 +341,7 @@ I created a list of standard cell instances, a list of nets, and which instance/
 to each net.
 </p>
 
-<pre class="example" id="orgd1f3d0b">
+<pre class="example" id="orgdae81e4">
 AST from netlist extraction
 
 netlist
@@ -380,7 +380,7 @@ module to read the outputs.
 </p>
 
 
-<div id="org9b150cc" class="figure">
+<div id="org7aa5609" class="figure">
 <p><img src="../assets/asic-challenge/simulated_out.png" alt="simulated_out.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>Waveform capture from my extracted netlist. This matches <code>example_inputs.vcd</code> exactly.</p>
@@ -404,16 +404,16 @@ module to read the outputs.
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgf470802" class="outline-3">
-<h3 id="orgf470802">Analyzing Netlist</h3>
-<div class="outline-text-3" id="text-orgf470802">
+<div id="outline-container-org087fd1d" class="outline-3">
+<h3 id="org087fd1d">Analyzing Netlist</h3>
+<div class="outline-text-3" id="text-org087fd1d">
 <p>
 Since I can clearly separate all of the sequential logic (flip flops) from the combinational logic
 (gates, buffers, diodes), I simply wrote an equation for each flipflop with respect to the other
 flipflops and the input pins.
 </p>
 
-<pre class="example" id="orgea2f333">
+<pre class="example" id="org2d5f090">
 Example Equations:
 
 ff1 = (ff9 AND ff3) OR ff4
@@ -429,7 +429,7 @@ values of the other 91 flipflops (and the 4 input pins!) would make this pin go 
 </p>
 
 
-<div id="org0b95eb4" class="figure">
+<div id="org0d695e9" class="figure">
 <p><img src="../assets/asic-challenge/combinational_logic_2.png" alt="combinational_logic_2.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>Block diagram of the combinational logic feeding "success".</p>
@@ -443,7 +443,7 @@ each point in time.
 </p>
 
 
-<div id="org865c94b" class="figure">
+<div id="org9a6b3d0" class="figure">
 <p><img src="../assets/asic-challenge/unrolled_fixed.png" alt="unrolled_fixed.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>Block diagram of unrolled boolean circuit feeding "success".</p>
@@ -474,18 +474,18 @@ respect to <code>I</code> at each point in time.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgef1870a" class="outline-2">
-<h2 id="orgef1870a">Easter Eggs</h2>
-<div class="outline-text-2" id="text-orgef1870a">
+<div id="outline-container-org9ec6351" class="outline-2">
+<h2 id="org9ec6351">Easter Eggs</h2>
+<div class="outline-text-2" id="text-org9ec6351">
 <p>
 Here are the miscellaneous things I noticed along the way. Noticeably, this whole puzzle had a "starry sky"
 theme, with several easter eggs relating to the theme. This isn't even counting the standard cell library,
 which is named "sky130".
 </p>
 </div>
-<div id="outline-container-orgadd8d06" class="outline-3">
-<h3 id="orgadd8d06">Easter Egg 1 - per arenam ad astra</h3>
-<div class="outline-text-3" id="text-orgadd8d06">
+<div id="outline-container-org5173307" class="outline-3">
+<h3 id="org5173307">Easter Egg 1 - per arenam ad astra</h3>
+<div class="outline-text-3" id="text-org5173307">
 <p>
 While I was parsing the standard cells to create the netlist, all layer/datatype combinations matched the
 sky130 expectations except for two. There were two cells named <code>INTERNAL_3</code> and <code>INTERNAL_7</code> which each
@@ -498,7 +498,7 @@ When I rendered these placements on the graph, I got a barcode-looking structure
 </p>
 
 
-<div id="org17ff171" class="figure">
+<div id="org54bb9ee" class="figure">
 <p><img src="../assets/asic-challenge/internal_barcode.png" alt="internal_barcode.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>Rendered instances of <code>INTERNAL_3</code> and <code>INTERNAL_7</code> (thin/wide rects).</p>
@@ -516,9 +516,9 @@ Sand is made of silicon.
 </p>
 </div>
 </div>
-<div id="outline-container-org11b9fb7" class="outline-3">
-<h3 id="org11b9fb7">Easter Egg 2 - The night sky awaits</h3>
-<div class="outline-text-3" id="text-org11b9fb7">
+<div id="outline-container-orgff5f487" class="outline-3">
+<h3 id="orgff5f487">Easter Egg 2 - The night sky awaits</h3>
+<div class="outline-text-3" id="text-orgff5f487">
 <p>
 The given <code>example_inputs.vcd</code> file has two random-looking input patterns that are each 121 bits long. However,
 when breaking this into 11 groups of 11, we can trim the leading/trailing zeroes to get the following bytes:
@@ -656,9 +656,9 @@ Their given example was "The night sky awaits  ".
 </p>
 </div>
 </div>
-<div id="outline-container-org6e9307a" class="outline-3">
-<h3 id="org6e9307a">Easter Egg 3 - Puzzle outputs</h3>
-<div class="outline-text-3" id="text-org6e9307a">
+<div id="outline-container-org8b99740" class="outline-3">
+<h3 id="org8b99740">Easter Egg 3 - Puzzle outputs</h3>
+<div class="outline-text-3" id="text-org8b99740">
 <p>
 When the <code>success</code> pin goes high, the output prints <code>(* TWO STARS *)</code> in ASCII, sticking with
 the "sky" theme. However, this is not the only output!
@@ -676,7 +676,7 @@ When you enter 121 ones (<code>I</code> never goes low), you get <code>BIG BANG<
 If you draw the zeroes and ones of the solution as spaces and stars, it looks like this:
 </p>
 
-<pre class="example" id="org3987481">
+<pre class="example" id="org0df9229">
 _ _ _ _ _ _ _ * _ * _
 * _ _ _ _ * _ _ _ _ _
 _ _ _ _ _ _ _ * _ * _
@@ -696,9 +696,9 @@ Notably, every row and every column has <i>exactly two stars</i>.
 </div>
 </div>
 </div>
-<div id="outline-container-orge5ffec0" class="outline-2">
-<h2 id="orge5ffec0">Failed Attempt: GUI tool</h2>
-<div class="outline-text-2" id="text-orge5ffec0">
+<div id="outline-container-orge177a01" class="outline-2">
+<h2 id="orge177a01">Failed Attempt: GUI tool</h2>
+<div class="outline-text-2" id="text-orge177a01">
 <p>
 Although the SAT solver works very nicely, it was NOT my first attempt. I actually spent about two weeks
 trying to get this GUI tool to work, but it ultimately did not get me to the puzzle solution.
@@ -715,14 +715,14 @@ a human to visually sort through the logic, group modules together, and build up
 </p>
 
 
-<div id="org73c7776" class="figure">
+<div id="org37737f7" class="figure">
 <p><img src="../assets/asic-challenge/visualizer_demo.png" alt="visualizer_demo.png" width="500px" />
 </p>
 <p><span class="figure-number">Figure 9: </span>Screenshot from the visualizer GUI. Each cell could be highlighted/moved.</p>
 </div>
 
 
-<div id="org61f8df4" class="figure">
+<div id="org3a59c75" class="figure">
 <p><img src="../assets/asic-challenge/visualizer_chaos.png" alt="visualizer_chaos.png" width="500px" />
 </p>
 <p><span class="figure-number">Figure 10: </span>Screenshot of a large-fanout D-FlipFlop in the visualizer tool.</p>
@@ -734,7 +734,7 @@ each connection with text.
 </p>
 
 
-<div id="org57cb3f0" class="figure">
+<div id="org15253ed" class="figure">
 <p><img src="../assets/asic-challenge/beforeafterlabel.png" alt="beforeafterlabel.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>Before/After comparison of net-labeling feature.</p>
@@ -761,9 +761,9 @@ SAT-solver approach.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb421ab6" class="outline-2">
-<h2 id="orgb421ab6">Closing Statements</h2>
-<div class="outline-text-2" id="text-orgb421ab6">
+<div id="outline-container-org0c4fd56" class="outline-2">
+<h2 id="org0c4fd56">Closing Statements</h2>
+<div class="outline-text-2" id="text-org0c4fd56">
 <p>
 I want to give a huge thank you to the hardware team at Jane Street. I've spent almost all of my free time
 thinking about this puzzle, trying different approaches, and learning more about the whole ASIC development

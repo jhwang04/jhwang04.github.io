@@ -16,7 +16,7 @@
 
 [[./assets/portrait.jpg]]
 
-B.S. in Computer Engineering (Fall 2026) \\
+B.S. in Computer Engineering (Spring 2027) \\
 Concentrations in Computing Hardware and System Architecture \\
 Minor in Korean Language (Fall 2024)
 
@@ -59,7 +59,7 @@ processors.
 \\
 * Projects
 
-** Solving Jane Street's ASIC Challenge
+** Solving Jane Street's ASIC Challenge /(Summer 2026)/
 In August 2026, Jane Street posted a challenge on their [[https://blog.janestreet.com/can-you-reverse-engineer-an-asic/][blog]] about reverse-engineering
 an ASIC. I spent ~30 hours over the course of the month trying to solve this puzzle.
 Here's a write-up of how I did it! /[[./asic-challenge/asic-challenge.html][(read more)]]/
@@ -126,9 +126,59 @@ plates to to verify their thermal properties. /[[./thermistorBoard/thermistorBoa
 
 * Relevant Coursework
 
+** Compilers, Interpreters, and Program Analyzers (Spring 2026)
+From the [[https://catalog.gatech.edu/courses-undergrad/cs][course catalog]] (CS 4240):
+#+begin_quote
+
+Study of techniques for the design and implementation of compilers, interpreters, and program
+analyzers, with consideration of the particular characteristics of widely used programming languages.
+#+end_quote
+
+** Advanced Computer Architecture (Spring 2026)
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 4100):
+#+begin_quote
+
+Comprehensive coverage of the architecture and system issues that confront the design of
+high-performance workstation/PC computer architectures with emphasis on quantitative evaluation.
+#+end_quote
+
+** Design of Operating Systems (Spring 2026)
+From the [[https://catalog.gatech.edu/courses-undergrad/cs][course catalog]] (CS 3210):
+#+begin_quote
+
+Operating systems concepts, including multi-threading, scheduling, synchronization, communication,
+and access control. Projects will cover design and implementation of several operating systems
+components.
+#+end_quote
+
+** VLSI and Advanced Digital Design (Fall 2025)
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 3150):
+#+begin_quote
+
+Advanced digital design issues in the context of VLSI systems. Introduction to a design
+methodology that encompasses the range from architectural models to circuit simulation.
+#+end_quote
+
+** Physical Foundations of Computer Engineering (Fall 2025)
+From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 3030):
+#+begin_quote
+
+Basic principles governing the physical realization of computing systems and their relationship
+to characteristics such as performance, energy, and robustness. Implementation technologies.
+#+end_quote
+
+** Design and Analysis of Algorithms (Fall 2025)
+From the [[https://catalog.gatech.edu/courses-undergrad/cs][course catalog]] (CS 3510):
+#+begin_quote
+
+Basic techniques of design and analysis of efficient algorithms for standard computational
+problems. NP-Completeness.
+#+end_quote
+
 ** Architecture, Systems, Concurrency, and Energy in Computation (Spring 2025)
 From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 3058)
 #+begin_quote
+
 Basic organizational principles of the major components of a processor - The core, memory,
 hierarchy, I/O subsystem, and basic operating system constraints that utilize them.
 #+end_quote
@@ -136,6 +186,7 @@ hierarchy, I/O subsystem, and basic operating system constraints that utilize th
 ** Signal Processing (Spring 2025)
 From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2026)
 #+begin_quote
+
 Introduction to discrete-time and continuous-time signals. Filtering. Frequency response.
 Fourier Transform. Z transform. Laboratory emphasizes computer-based signal processing.
 #+end_quote
@@ -143,6 +194,7 @@ Fourier Transform. Z transform. Laboratory emphasizes computer-based signal proc
 ** Programming for Hardware and Software Systems (Fall 2024)
 From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2035):
 #+begin_quote
+
 Creation of complex execution and storage mechanisms, based on instruction set architecture, for
 software design including high-level programming languages and operating systems.
 #+end_quote
@@ -150,12 +202,14 @@ software design including high-level programming languages and operating systems
 ** Digital Design Laboratory (Fall 2024)
 From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2031):
 #+begin_quote
+
 Design and implementation of digital systems, including a team design project. CAD tools, project
 design methodologies, logic synthesis, and assembly language programming.
 #+end_quote
 ** Circuit Analysis (Fall 2024)
 From the [[https://catalog.gatech.edu/courses-undergrad/ece][course catalog]] (ECE 2040):
 #+begin_quote
+
 Basic concepts of DC and AC circuit theory and analysis.
 #+end_quote
 ** Data Structures & Algorithms (Spring 2024)
